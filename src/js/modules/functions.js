@@ -51,6 +51,38 @@ export function fix() {
 	})
 }
 
+export function card() {
+	const card_open = $('#open_card')
+	const card_close = $('#close_card')
+	const card_window = $('.card')
+	const card_background = $('.card__background')
+
+	card_close.on('click', function (e) {
+		e.preventDefault()
+		card_window.css('right', '-41rem')
+		card_background.css('opacity', 0)
+		setTimeout(function () {
+			card_background.css('display', 'none')
+		}, 500)
+	})
+
+	card_open.on('click', function (e) {
+		e.preventDefault()
+		card_window.css('right', '0')
+		card_background.css('display', 'block')
+		card_background.css('opacity', 1)
+	})
+
+	card_background.on('click', function (e) {
+		e.preventDefault()
+		card_window.css('right', '-41rem')
+		card_background.css('opacity', 0)
+		setTimeout(function () {
+			card_background.css('display', 'none')
+		}, 500)
+	})
+}
+
 export function burgerMenu() {
 	$('.header__burger').on("click", function (event) {
 		$('.header__burger, .header__menu').toggleClass('active');
