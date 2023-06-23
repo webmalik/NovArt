@@ -1,6 +1,8 @@
 import $ from "jquery";
 import Aos from "aos";
 import Siema from "siema";
+import Swiper from "swiper";
+import 'swiper/swiper.css';
 
 export function isWebp() {
 	function testWebP(callback) {
@@ -20,6 +22,33 @@ export function isWebp() {
 			document.querySelector('body').classList.add('no-webp');
 		}
 	});
+}
+
+export function swiper_init() {
+	const sw = new Swiper('.swiper', {
+		slidesPerView: 'auto',
+		role: {
+			group: true,
+		},
+		spaceBetween: 40,
+	});
+
+	sw.init();
+}
+
+export function fix() {
+	$('.nav__toggle').on('mouseover', function () {
+		$('.header__info').css('opacity', '0')
+	})
+	$('.submenu__list').on('mouseover', function () {
+		$('.header__info').css('opacity', '0')
+	})
+	$('.nav__toggle').on('mouseleave', function () {
+		$('.header__info').css('opacity', '1')
+	})
+	$('.submenu__list').on('mouseleave', function () {
+		$('.header__info').css('opacity', '1')
+	})
 }
 
 export function burgerMenu() {

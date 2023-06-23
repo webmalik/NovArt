@@ -1,0 +1,462 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: #272727;
+}
+
+/*
+	! Media mixin
+*/
+body {
+  font-family: "Gilroy";
+  font-size: 16px;
+  background-color: #ffffff;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.container {
+  position: relative;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 10rem;
+}
+
+.button {
+  border-radius: 4px;
+  color: #FFF;
+  text-align: center;
+  font-size: 0.875rem;
+  font-family: Gilroy;
+  font-weight: 700;
+  line-height: 1.6rem;
+  cursor: pointer;
+  background-color: #71C8FF;
+}
+
+.title h1 {
+  color: #272727;
+  font-size: 2.5rem;
+  font-family: Gilroy;
+  font-weight: 600;
+  line-height: 2.75rem;
+  text-transform: uppercase;
+}
+
+.swiper {
+  position: absolute !important;
+  left: 0;
+}
+
+.swiper-wrapper {
+  display: flex;
+  z-index: 0;
+}
+
+.swiper-slide {
+  cursor: pointer;
+  margin: 0 auto;
+}
+.swiper-slide img {
+  width: 100%;
+  height: 40rem;
+  object-fit: cover;
+}
+
+main {
+  position: relative;
+  margin-top: 0rem;
+  z-index: 3;
+  background-color: #ffffff;
+}
+
+.header {
+  transition: all 0.5s ease-in;
+}
+.header__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+}
+.header__logo {
+  max-width: 4.375rem;
+  cursor: pointer;
+  z-index: 2;
+}
+.header__logo img {
+  width: 4.375rem;
+  height: 2.8125rem;
+}
+.header__icons {
+  display: flex;
+  justify-self: end;
+  gap: 1.5rem;
+  z-index: 2;
+}
+.header__user {
+  max-width: 1.375rem;
+  cursor: pointer;
+}
+.header__user img {
+  width: 1.375rem;
+  height: 1.375rem;
+}
+.header__card {
+  max-width: 1.375rem;
+  cursor: pointer;
+}
+.header__card img {
+  width: 1.375rem;
+  height: 1.375rem;
+}
+
+.nav__list {
+  display: flex;
+  padding: 2.56rem 0 2.31rem;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 2;
+}
+.nav__item {
+  display: block;
+  cursor: pointer;
+  color: #333;
+  font-size: 0.875rem;
+  font-family: Gilroy;
+  font-weight: 700;
+  line-height: 1.6rem;
+  z-index: 2;
+}
+.nav__item.nav__toggle {
+  padding-right: 1.61rem;
+  transition: all 0.5s ease-in;
+}
+.nav__toggle {
+  background-image: url("../img/arrow_down.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+  z-index: 1;
+}
+.nav__toggle a {
+  position: relative;
+  z-index: 3;
+}
+
+.nav__toggle:hover > .submenu__list {
+  top: 0rem;
+  opacity: 1;
+  padding-top: 10.81rem;
+}
+
+.submenu__list {
+  display: flex;
+  background-color: #ffffff;
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  padding: 0 10rem 3rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+  left: 0;
+  top: -10rem;
+  gap: 2.94rem 5.19rem;
+  flex-wrap: wrap;
+  transition: all 0.2s ease-in;
+  z-index: 2;
+}
+.submenu__item {
+  color: #333;
+  font-size: 1.5rem;
+  font-family: Gilroy;
+  font-weight: 600;
+  z-index: 2;
+  background: #ffffff;
+}
+
+.header__info {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 35rem;
+  pointer-events: none;
+  transition: all 0.2s ease-in;
+}
+.header__slug {
+  color: #FFF;
+  font-size: 0.9375rem;
+  font-family: Gilroy;
+  font-weight: 700;
+}
+.header__title {
+  color: #FFF;
+  font-size: 4rem;
+  font-family: Gilroy;
+  font-weight: 600;
+  letter-spacing: 0.04rem;
+  text-transform: uppercase;
+  padding-top: 1.79rem;
+  padding-bottom: 2.13rem;
+}
+.header__button {
+  background: #272727;
+  padding: 1.07438rem 2.59938rem 1.04875rem 2.5625rem;
+  color: #FFF;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 0.875rem;
+  font-family: Gilroy;
+  font-weight: 700;
+  max-width: 12rem;
+  pointer-events: auto;
+}
+
+.cart {
+  padding: 8rem 0;
+}
+.cart__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart__header a {
+  position: relative;
+  color: #272727;
+  font-size: 0.9375rem;
+  font-family: Gilroy;
+  font-weight: 300;
+  line-height: 1.6rem;
+}
+.cart__header a:after {
+  content: "";
+  position: absolute;
+  bottom: -0.1rem;
+  left: 0;
+  height: 1px;
+  width: 0%;
+  display: block;
+  background: #272727;
+  background-size: 100% 1px;
+  transition: all 0.3s ease-in-out;
+}
+.cart__header a span {
+  display: inline-flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(39, 39, 39, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+.cart__header a:hover::after {
+  width: 68%;
+}
+.cart__header a:hover span {
+  background-color: #272727;
+}
+.cart__header a:hover span svg path {
+  stroke: #ffffff;
+}
+.cart__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem 1.5rem;
+  padding-top: 2rem;
+}
+.cart__image img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.cart__title {
+  color: #272727;
+  text-align: center;
+  font-size: 0.9375rem;
+  font-family: Gilroy;
+  font-weight: 700;
+  line-height: 1.6rem;
+  padding-top: 1.5rem;
+}
+.cart__price {
+  color: rgba(39, 39, 39, 0.7);
+  text-align: center;
+  font-size: 0.9375rem;
+  font-family: Gilroy;
+  font-weight: 300;
+  line-height: 1.6rem;
+}
+
+.promo__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.88rem;
+  padding: 8rem 0 6.12rem;
+}
+.promo__item {
+  text-align: center;
+  width: 100%;
+}
+.promo__title {
+  color: #272727;
+  text-align: center;
+  font-size: 1.25rem;
+  font-family: Gilroy;
+  font-weight: 600;
+  line-height: 1.75rem;
+  text-transform: uppercase;
+  padding: 1.86rem 0 1.31rem;
+}
+.promo__desc {
+  color: #272727;
+  text-align: center;
+  font-size: 0.9375rem;
+  font-family: Gilroy;
+  font-weight: 300;
+  line-height: 1.6rem;
+}
+
+.footer {
+  background-color: #272727;
+  padding-top: 4rem;
+}
+.footer__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4.74rem;
+}
+.footer__info {
+  display: flex;
+  width: 100%;
+  gap: 2.5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__logo {
+  width: 9.81944rem;
+}
+.footer__logo img {
+  width: 100%;
+}
+.footer__desc {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9375rem;
+  font-family: Gilroy;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.6rem;
+}
+.footer__payments {
+  display: flex;
+  gap: 0.5rem;
+  padding-top: 3.28rem;
+}
+.footer__nav .nav__list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 4.5rem;
+}
+.footer__nav .nav__item {
+  background: none;
+}
+.footer__nav .nav__item a {
+  color: #FFF;
+  font-size: 1.33131rem;
+  font-family: Gilroy;
+  font-weight: 700;
+  line-height: 2.43438rem;
+}
+.footer__nav .nav__toggle {
+  position: relative;
+  padding: 0;
+}
+.footer__nav .nav__toggle svg {
+  padding-left: 2rem;
+}
+.footer__nav .nav__toggle:hover > .submenu__list {
+  top: 0;
+  opacity: 1;
+  padding-top: 0;
+}
+.footer__nav .submenu__list {
+  display: block;
+  position: relative;
+  top: 0;
+  right: 0;
+  padding: 0;
+  opacity: 1;
+  background-color: transparent;
+}
+.footer__nav .submenu__item {
+  background-color: transparent;
+}
+.footer__nav .submenu__item a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.125rem;
+  font-family: Gilroy;
+  font-weight: 500;
+}
+
+.payments__item {
+  cursor: pointer;
+}

@@ -1,7 +1,425 @@
 @import "_reset";
-@import "_fonts";
 @import "_mixins";
 @import "_tamplates";
 @import "_variables";
 @import "_root";
+@import "_components";
+
+.header {
+	transition: all 0.5s ease-in;
+
+	&__wrapper {
+		display: grid;
+		grid-template-columns: 1fr 2fr 1fr;
+		align-items: center ;
+	}
+
+	&__logo {
+		max-width: 4.375rem;
+		cursor: pointer;
+		img {
+			width: 4.375rem;
+			height: 2.8125rem;
+		}
+		z-index: 2;
+	}
+
+	&__nav {
+		
+	}
+
+	&__icons {
+		display: flex;
+		justify-self: end;
+		gap: 1.5rem;
+		z-index: 2;
+	}
+
+	&__user {
+		max-width: 1.375rem;
+		cursor: pointer;
+		img {
+			width: 1.375rem;
+			height: 1.375rem;
+		}
+	}
+
+	&__card {
+		max-width: 1.375rem;
+		cursor: pointer;
+		img {
+			width: 1.375rem;
+			height: 1.375rem;
+		}
+	}
+}
+
+.nav {
+
+	&__list {
+		display: flex;
+		padding: 2.56rem 0 2.31rem;
+		justify-content: space-between;
+		width: 100%;
+		z-index: 2;
+	}
+
+	&__item {
+		//position: relative;
+		display: block;
+		cursor: pointer;
+		color: #333;
+		font-size: 0.875rem;
+		font-family: Gilroy;
+		font-weight: 700;
+		line-height: 1.6rem;
+		z-index: 2;
+
+		&.nav__toggle {
+			padding-right: 1.61rem;
+			transition: all 0.5s ease-in;
+		}
+	}
+
+	&__toggle {
+		background-image: url('@img/arrow_down.svg');
+		background-repeat: no-repeat;
+		background-position: right;
+		z-index: 1;
+		a {
+			position: relative;
+			z-index: 3;
+		}
+	}
+}
+
+.nav__toggle:hover > .submenu__list {
+	top: 0rem;
+	opacity: 1;
+	padding-top: 10.81rem;
+}
+
+.submenu {
+
+	&__list {
+		display: flex;
+		background-color: $white_color;
+		position: absolute;
+		width: 100%;
+		opacity: 0;
+		padding: 0 10rem 3rem;
+		box-sizing: border-box;
+		margin: 0 auto;
+		left: 0;
+		//top: -10.81rem;
+		//bottom: -3.06rem;
+		top: -10rem;
+		gap: 2.94rem 5.19rem;
+		flex-wrap: wrap;
+		transition: all 0.2s ease-in;
+		z-index: 2;
+	}
+
+	&__item {
+		color: #333;
+		font-size: 1.5rem;
+		font-family: Gilroy;
+		font-weight: 600;
+		z-index: 2;
+		background: $white_color;
+	}
+}
+
+.header {
+
+	&__info {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 35rem;
+		pointer-events: none;
+		transition: all 0.2s ease-in;
+	}
+
+	&__slug {
+		color: #FFF;
+		font-size: 0.9375rem;
+		font-family: Gilroy;
+		font-weight: 700;
+		//line-height: 1.6rem;
+	}
+
+	&__title {
+		color: #FFF;
+		font-size: 4rem;
+		font-family: Gilroy;
+		font-weight: 600;
+		//line-height: 4rem;
+		letter-spacing: 0.04rem;
+		text-transform: uppercase;
+		padding-top: 1.79rem;
+		padding-bottom: 2.13rem;
+	}
+
+	&__button {
+		background: #272727;
+		padding: 1.07438rem 2.59938rem 1.04875rem 2.5625rem;
+		color: #FFF;
+		box-sizing: border-box;
+		text-align: center;
+		font-size: 0.875rem;
+		font-family: Gilroy;
+		font-weight: 700;
+		//line-height: 1.6rem;
+		max-width: 12rem;
+		pointer-events: auto;
+	}
+}
+
+.cart {
+	padding: 8rem 0;
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		a {
+			position: relative;
+			color: $main_color;
+			font-size: 0.9375rem;
+			font-family: Gilroy;
+			font-weight: 300;
+			line-height: 1.6rem;
+
+			&:after {
+				content: '';
+				position: absolute;
+				bottom: -0.1rem;
+				left: 0;
+				height: 1px;
+				width: 0%;
+				display: block;
+				background: $main_color;
+				background-size: 100% 1px;
+				transition: all .3s ease-in-out;
+			}
+
+			span {
+				display: inline-flex;
+				width: 1.5rem;
+				height: 1.5rem;
+				margin-left: 1rem;
+				justify-content: center;
+				align-items: center;
+				flex-shrink: 0;
+				border-radius: 50%;
+				background: rgba(39, 39, 39, 0.10);
+				transition: all .3s ease-in-out;
+			}
+
+			&:hover {
+				&::after {
+					width: 68%;
+				}
+				span {
+					background-color: $main_color;
+					svg path{
+						stroke: $white_color;
+					}
+				}
+			}
+		}
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(4 , 1fr);
+		gap: 3rem 1.5rem;
+		padding-top: 2rem;
+	}
+
+	&__image {
+
+		img {
+			max-width: 100%;
+			height: auto;
+			object-fit: cover;
+		}
+		
+	}
+
+	&__title {
+		color: $main_color;
+		text-align: center;
+		font-size: 0.9375rem;
+		font-family: Gilroy;
+		font-weight: 700;
+		line-height: 1.6rem;
+		padding-top: 1.5rem;
+	}
+
+	&__price {
+		color: rgba(39, 39, 39, 0.70);
+		text-align: center;
+		font-size: 0.9375rem;
+		font-family: Gilroy;
+		font-weight: 300;
+		line-height: 1.6rem;
+	}
+}
+
+.promo {
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		//justify-content: space-between;
+		gap: 1.88rem;
+		padding: 8rem 0  6.12rem;
+	}
+
+	&__item {
+		text-align: center;
+		width: 100%;
+		//padding: 0rem 2.29063rem 0.6125rem 2.29125rem;
+	}
+
+	&__title {
+		color: $main_color;
+		text-align: center;
+		font-size: 1.25rem;
+		font-family: Gilroy;
+		font-weight: 600;
+		line-height: 1.75rem;
+		text-transform: uppercase;
+		padding: 1.86rem 0 1.31rem;
+	}
+
+	&__desc {
+		color: $main_color;
+		text-align: center;
+		font-size: 0.9375rem;
+		font-family: Gilroy;
+		font-weight: 300;
+		line-height: 1.6rem;
+	}
+}
+
+.footer {
+	background-color: $main_color;
+	padding-top: 4rem;
+
+	&__wrapper {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: 4.74rem;
+	}
+
+	&__block {
+		//width: 100%;
+	}
+
+	&__info {
+		display: flex;
+		width: 100%;
+		gap: 2.5rem;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__logo {
+		width: 9.81944rem; 
+		img {
+			width: 100%;
+		}
+	}
+
+	&__desc {
+		color: rgba(255, 255, 255, 0.70);
+		font-size: 0.9375rem;
+		font-family: Gilroy;
+		font-style: italic;
+		font-weight: 300;
+		line-height: 1.6rem;
+	}
+
+	&__payments {
+		display: flex;
+		gap: 0.5rem;
+		padding-top: 3.28rem;
+	}
+
+	&__nav {
+		& .nav {
+		
+		&__list {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			padding: 0 0 4.5rem;
+		}
+
+		&__item {
+			background: none;
+			a {
+				color: #FFF;
+				font-size: 1.33131rem;
+				font-family: Gilroy;
+				font-weight: 700;
+				line-height: 2.43438rem;
+			}
+		}
+
+		&__toggle {
+			position: relative;
+			padding: 0;
+
+			svg {
+				padding-left: 2rem  ;
+			}
+		}
+
+		}
+
+		& .nav__toggle:hover>.submenu__list {
+			top: 0;
+			opacity: 1;
+			padding-top: 0;
+		}
+
+		& .submenu {
+
+			&__list {
+				display: block;
+				position: relative;
+				top: 0;
+				right: 0;
+				padding: 0;
+				opacity: 1;
+				background-color: transparent;
+			}
+
+			&__item {
+				background-color: transparent;
+				a {
+					color: rgba(255, 255, 255, 0.80);
+					font-size: 1.125rem;
+					font-family: Gilroy;
+					font-weight: 500;
+				}
+			}
+		}
+	}	
+}
+
+.payments {
+
+	&__item {
+		cursor: pointer;
+	}
+}
+
+
 

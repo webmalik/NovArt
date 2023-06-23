@@ -6,12 +6,23 @@
 })
 
 <body>
-	@@include("html/header.html", {})
-	<main>
-		@@include("html/main_new_project.html", {})
-	</main>
-	@@include("html/footer.html", {})
-	@@include("html/scripts.html", {})
+	<div class="wrapper">
+		<div class="swiper">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><img src="@img/banner.png" alt=""></div>
+				<div class="swiper-slide"><img src="@img/banner.png" alt=""></div>
+				<div class="swiper-slide"><img src="@img/banner.png" alt=""></div>
+			</div>
+		</div>
+		<div class="container">
+			@@include("html/header.html", {})
+			<main>
+				@@include("html/main.html", {})
+			</main>
+		</div>
+		@@include("html/footer.html", {})
+		@@include("html/scripts.html", {})
+	</div>
 </body>
 
 </html>

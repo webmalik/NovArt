@@ -55,7 +55,7 @@ export const fontsStyle = () => {
 					const fontWeight = fontName.split('-')[1] || 400;
 					const fontName_f = file.split('-')[0];
 
-					fs.appendFile(fontsFile, `@font-face {\n\tfont-family: '${fontName_f}';\n\tfont-display: swap;\n\tsrc: url("../fonts/${fontName}.woff") format("woff"), url("../fonts/${fontName}.woff2") format("woff2");\n\tfont-weight: ${fontWeight};\n\tfont-style: normal;\n}\n`, (err) => {
+					fs.appendFile(fontsFile, `@font-face {\n\tfont-family: '${fontName_f}';\n\tsrc: url("../fonts/${fontName}.woff") format("woff"), url("../fonts/${fontName}.woff2") format("woff2");\n\tfont-weight: ${fontWeight};\n\tfont-style: normal;\n}\n`, (err) => {
 						if (err) {
 							console.log(`Помилка додавання шрифту ${fontName_f} до файлу ${fontsFile}: ${err}`);
 							return;
