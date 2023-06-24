@@ -39,15 +39,19 @@ export function swiper_init() {
 export function fix() {
 	$('.nav__toggle').on('mouseover', function () {
 		$('.header__info').css('opacity', '0')
+		$('.nav__main .nav__item a').css('color', '#333')
 	})
 	$('.submenu__list').on('mouseover', function () {
 		$('.header__info').css('opacity', '0')
+		$('.nav__main .nav__item a').css('color', '#333')
 	})
 	$('.nav__toggle').on('mouseleave', function () {
 		$('.header__info').css('opacity', '1')
+		$('.nav__main .nav__item a').css('color', '#fff')
 	})
 	$('.submenu__list').on('mouseleave', function () {
 		$('.header__info').css('opacity', '1')
+		$('.nav__main .nav__item a').css('color', '#fff')
 	})
 }
 
