@@ -1,0 +1,253 @@
+/* checkbox settings 👇 */
+
+
+.ui-checkbox {
+	--primary-color: #71C8FF;
+	--secondary-color: #fff;
+	--primary-hover-color: #71C8FF;
+	/* checkbox */
+	--checkbox-diameter: 1.5rem;
+	--checkbox-border-radius: 6px;
+	--checkbox-border-color: #0B1423;
+	--checkbox-border-width: 2.5px;
+	--checkbox-border-style: solid;
+	/* checkmark */
+	--checkmark-size: 1.2;
+}
+
+.ui-checkbox,
+.ui-checkbox *,
+.ui-checkbox *::before,
+.ui-checkbox *::after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.ui-checkbox {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	width: var(--checkbox-diameter);
+	height: var(--checkbox-diameter);
+	border-radius: var(--checkbox-border-radius);
+	background: var(--secondary-color);
+	border: var(--checkbox-border-width) var(--checkbox-border-style) var(--checkbox-border-color);
+	-webkit-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+	cursor: pointer;
+	position: relative;
+}
+
+.ui-checkbox::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	-webkit-box-shadow: 0 0 0 calc(var(--checkbox-diameter) / 2.5) var(--primary-color);
+	box-shadow: 0 0 0 calc(var(--checkbox-diameter) / 2.5) var(--primary-color);
+	border-radius: inherit;
+	opacity: 0;
+	-webkit-transition: all 0.5s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+	-o-transition: all 0.5s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+	transition: all 0.5s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+}
+
+.ui-checkbox::before {
+	top: 40%;
+	left: 50%;
+	content: "";
+	position: absolute;
+	width: 4px;
+	height: 7px;
+	border-right: 2px solid var(--secondary-color);
+	border-bottom: 2px solid var(--secondary-color);
+	-webkit-transform: translate(-50%, -50%) rotate(45deg) scale(0);
+	-ms-transform: translate(-50%, -50%) rotate(45deg) scale(0);
+	transform: translate(-50%, -50%) rotate(45deg) scale(0);
+	opacity: 0;
+	-webkit-transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s;
+	-o-transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s;
+	transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s;
+}
+
+/* actions */
+
+.ui-checkbox:hover {
+	border-color: var(--primary-color);
+}
+
+.ui-checkbox:checked {
+	background: var(--primary-color);
+	border-color: transparent;
+}
+
+.ui-checkbox:checked::before {
+	opacity: 1;
+	-webkit-transform: translate(-50%, -50%) rotate(45deg) scale(var(--checkmark-size));
+	-ms-transform: translate(-50%, -50%) rotate(45deg) scale(var(--checkmark-size));
+	transform: translate(-50%, -50%) rotate(45deg) scale(var(--checkmark-size));
+	-webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+	-o-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+	transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+}
+
+.ui-checkbox:active:not(:checked)::after {
+	-webkit-transition: none;
+	-o-transition: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	transition: none;
+	opacity: 1;
+}
+
+.check {
+	cursor: pointer;
+	position: relative;
+	margin: auto;
+	width: 12px;
+	height: 12px;
+	-webkit-tap-highlight-color: transparent;
+	transform: translate3d(0, 0, 0);
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 12px;
+}
+
+// .check:before {
+// 	content: "";
+// 	position: absolute;
+// 	top: -15px;
+// 	left: -15px;
+// 	width: 25px;
+// 	height: 25px;
+// 	border-radius: 50%;
+// 	background: rgba(34, 50, 84, 0.03);
+// 	opacity: 0;
+// 	transition: opacity 0.2s ease;
+// }
+
+.check svg {
+	position: relative;
+	top: 3px;
+	margin-right: 10px;
+	z-index: 1;
+	fill: none;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke: #c8ccd4;
+	stroke-width: 1.5;
+	transform: translate3d(0, 0, 0);
+	transition: all 0.2s ease;
+}
+
+.check svg path {
+	stroke-dasharray: 60;
+	stroke-dashoffset: 0;
+}
+
+.check svg polyline {
+	stroke-dasharray: 22;
+	stroke-dashoffset: 66;
+}
+
+.check:hover:before {
+	//opacity: 1;
+}
+
+.check:hover svg {
+	stroke: $primary-color;
+}
+
+#cbx:checked+.check svg {
+	stroke: $primary-color;
+}
+
+#cbx:checked+.check svg path {
+	stroke-dashoffset: 60;
+	transition: all 0.3s linear;
+}
+
+#cbx:checked+.check svg polyline {
+	stroke-dashoffset: 42;
+	transition: all 0.2s linear;
+	transition-delay: 0.15s;
+}
+
+#cbx2:checked+.check svg {
+	stroke: $primary-color;
+}
+
+#cbx2:checked+.check svg {
+	stroke: $primary-color;
+}
+
+#cbx2:checked+.check svg path {
+	stroke-dashoffset: 60;
+	transition: all 0.3s linear;
+}
+
+#cbx2:checked+.check svg polyline {
+	stroke-dashoffset: 42;
+	transition: all 0.2s linear;
+	transition-delay: 0.15s;
+}
+
+.accordion__item {
+	margin-bottom: 0.5rem;
+	border-radius: 0.25rem;
+	border-bottom: 2px solid #EDEDED;;
+}
+
+.accordion__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 1rem;
+	color: #1A1D1F;
+	font-weight: 700;
+	font-size: 20px;
+	border-top-left-radius: 0.25rem;
+	border-top-right-radius: 0.25rem;
+	cursor: pointer;
+	transition: background-color 0.2s ease-out;
+}
+
+.accordion__header::after {
+	flex-shrink: 0;
+	width: 1.25rem;
+	height: 1.25rem;
+	margin-left: auto;
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%231A1D1F'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+	background-repeat: no-repeat;
+	background-size: 1.25rem;
+	content: "";
+	transition: transform 0.2s ease-out;
+}
+
+.accordion__item_show .accordion__header::after,
+.accordion__item_slidedown .accordion__header::after {
+	transform: rotate(-180deg);
+}
+
+.accordion__header:hover {
+	background-color: #1a1d1f1e;
+}
+
+.accordion__item:not(.accordion__item_show) .accordion__header {
+	border-bottom-right-radius: 0.25rem;
+	border-bottom-left-radius: 0.25rem;
+}
+
+.accordion__content {
+	padding: 0.75rem 1rem;
+	background: #fff;
+	border-bottom-right-radius: 0.25rem;
+	border-bottom-left-radius: 0.25rem;
+}
+
+.accordion__item:not(.accordion__item_show) .accordion__body {
+	display: none;
+}

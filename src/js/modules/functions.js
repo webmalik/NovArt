@@ -3,6 +3,8 @@ import Aos from "aos";
 import Siema from "siema";
 import Swiper from "swiper";
 import 'swiper/swiper.css';
+import { Fancybox } from "@fancyapps/ui";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
 export function isWebp() {
 	function testWebP(callback) {
@@ -37,21 +39,66 @@ export function swiper_init() {
 }
 
 export function fix() {
-	$('.nav__toggle').on('mouseover', function () {
-		$('.header__info').css('opacity', '0')
-		$('.nav__main .nav__item a').css('color', '#333')
+	const nav__toggle = $('.nav__toggle')
+	const submenu = $('.submenu__list')
+	const header__info = $('.header__info')
+	const nav__link = $('.nav__main .nav__item a')
+	const logo_img = $('#logo_img')
+	const user_img = $('#user_img')
+	const card_img = $('#card_img')
+
+	nav__toggle.on('mouseover', function () {
+		header__info.css('opacity', '0')
+		nav__link.css('color', '#333')
+		logo_img.attr('src', 'img/logo.svg')
+		user_img.attr('src', 'img/user.svg')
+		card_img.attr('src', 'img/card.svg')
 	})
-	$('.submenu__list').on('mouseover', function () {
-		$('.header__info').css('opacity', '0')
-		$('.nav__main .nav__item a').css('color', '#333')
+	submenu.on('mouseover', function () {
+		header__info.css('opacity', '0')
+		nav__link.css('color', '#333')
+		logo_img.attr('src', 'img/logo.svg')
+		user_img.attr('src', 'img/user.svg')
+		card_img.attr('src', 'img/card.svg')
 	})
-	$('.nav__toggle').on('mouseleave', function () {
-		$('.header__info').css('opacity', '1')
-		$('.nav__main .nav__item a').css('color', '#fff')
+	nav__toggle.on('mouseleave', function () {
+		header__info.css('opacity', '1')
+		nav__link.css('color', '#fff')
+		logo_img.attr('src', 'img/logo-white.svg')
+		user_img.attr('src', 'img/user-white.svg')
+		card_img.attr('src', 'img/card-white.svg')
 	})
-	$('.submenu__list').on('mouseleave', function () {
-		$('.header__info').css('opacity', '1')
-		$('.nav__main .nav__item a').css('color', '#fff')
+	submenu.on('mouseleave', function () {
+		header__info.css('opacity', '1')
+		nav__link.css('color', '#fff')
+		logo_img.attr('src', 'img/logo-white.svg')
+		user_img.attr('src', 'img/user-white.svg')
+		card_img.attr('src', 'img/card-white.svg')
+	})
+}
+
+export function filter() {
+	const link = $('#filter')
+	const filter = $('.order__filter')
+	const wrapper = $('.order__wrapper')
+	let active = true
+
+	link.on('click', function (e) {
+		if (active) {
+			filter.addClass('filter-noactive')
+			setTimeout(function () {
+				filter.hide();
+				wrapper.css('grid-template-columns', '1fr')
+			}, 600)
+			active = false
+		} else {
+			filter.show();
+			setTimeout(function () {
+				wrapper.css('grid-template-columns', '1fr 3fr')
+			}, 100)
+			filter.removeClass('filter-noactive')
+			active = true
+		}
 	})
 }
 
@@ -84,6 +131,122 @@ export function card() {
 		setTimeout(function () {
 			card_background.css('display', 'none')
 		}, 500)
+	})
+}
+
+export function fancy() {
+	const mainImageLink = document.querySelector('.order-item__main-image a');
+	const thumbnailImages = document.querySelectorAll('.order-item__thumbnail img');
+
+	const thumbnailArray = Array.from(thumbnailImages);
+	const galleryItems = thumbnailArray.map((thumbnail) => ({
+		src: thumbnail.getAttribute('src'),
+		caption: thumbnail.getAttribute('alt')
+	}));
+
+	mainImageLink.addEventListener('click', (event) => {
+		event.preventDefault();
+
+		const mainImageIndex = thumbnailArray.findIndex((thumbnail) => {
+			const thumbnailSrc = thumbnail.getAttribute('src');
+			return thumbnailSrc === mainImageLink.querySelector('img').getAttribute('src');
+		});
+
+		Fancybox.show(galleryItems, {
+			startIndex: mainImageIndex,
+			onClose: () => {
+				mainImageLink.innerHTML = '';
+			}
+		});
+	});
+
+	thumbnailImages.forEach((thumbnail, index) => {
+		thumbnail.addEventListener('click', (event) => {
+			event.preventDefault();
+
+			const imagePath = thumbnail.getAttribute('src');
+			const imageCaption = thumbnail.getAttribute('alt');
+
+			mainImageLink.innerHTML = `<img src="${imagePath}" alt="${imageCaption}" />`;
+
+			// Переміщення мініатюр до позиції 1
+			thumbnailArray.forEach((thumb, thumbIndex) => {
+				if (thumbIndex === 0) {
+					thumb.classList.add('active');
+				} else {
+					thumb.classList.remove('active');
+				}
+			});
+
+			// Прокручування до видимої мініатюри
+			thumbnail.scrollIntoView({
+				behavior: 'smooth',
+				block: 'nearest',
+				inline: 'start'
+			});
+		});
+	});
+
+	Fancybox.bind('[data-fancybox="gallery"]', {
+		toolbar: "auto",
+		loop: true,
+		animationEffect: "zoom-in-out",
+		transitionEffect: "fade",
+		buttons: ["zoom", "slideShow", "fullScreen", "thumbs", "close"],
+		Thumbs: {
+			autoStart: true,
+			hideOnClose: true,
+		},
+		touch: {
+			vertical: false,
+		},
+	});
+}
+
+export function selectborder() {
+	const imageContainer = document.querySelector('.order-item__select');
+	const inputElement = document.querySelector('.order-item__value input');
+
+	imageContainer.addEventListener('click', (event) => {
+		const clickedImage = event.target;
+
+		if (clickedImage.tagName === 'IMG') {
+			const allImages = imageContainer.querySelectorAll('img');
+			allImages.forEach((image) => {
+				image.classList.remove('active');
+			});
+			clickedImage.classList.add('active');
+			const altText = clickedImage.getAttribute('alt');
+			inputElement.value = altText;
+		}
+	});
+}
+
+export function din() {
+	const buttonContainer = document.querySelector('.order-item__select-button');
+	const inputElement = document.querySelector('#input__din');
+
+	buttonContainer.addEventListener('click', (event) => {
+		const clickedButton = event.target;
+
+		if (clickedButton.tagName === 'BUTTON') {
+			const allButtons = buttonContainer.querySelectorAll('button');
+			allButtons.forEach((button) => {
+				button.classList.remove('active');
+			});
+
+			clickedButton.classList.add('active');
+
+			const buttonValue = clickedButton.innerText;
+			inputElement.value = buttonValue;
+		}
+	});
+}
+
+export function item_location() {
+	let item = $('.cart__item')
+	item.on('click', function () {
+		location.assign('cart-item.html')
 	})
 }
 

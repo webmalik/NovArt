@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="uk-UA">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.min.css">
+	<title>Головна сторінка</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="container">
+			<header class="header">
+	<div class="header__wrapper">
+		<div class="header__logo">
+			<a href="/">
+				<img src="img/logo.svg" alt="NovArt">
+			</a>
+		</div>
+		<nav class="header__nav">
+			<ul class="nav__list">
+				<li class="nav__item nav__toggle" data-submenu="poster">
+					<a href="#">POSTER SETS</a>
+					<ul class="submenu__list" id="poster">
+						<li class="submenu__item">
+							<a href="">NEW</a>
+						</li>
+						<li class="submenu__item">
+							<a href="">SET OF 3 PICTURES</a>
+						</li>
+						<li class="submenu__item">
+							<a href="">BOHO</a>
+						</li>
+						<li class="submenu__item">
+							<a href="">NATURE</a>
+						</li>
+						<li class="submenu__item">
+							<a href="">KITCHEN</a>
+						</li>
+						<li class="submenu__item">
+							<a href="">HOME</a>
+						</li>
+						<li class="submenu__item">
+							<a href="">FASHION</a>
+						</li>
+						<li class="submenu__item">
+							<a href="">BEACH AND SEA</a>
+						</li>
+						<li class="submenu__item">
+							<a href="">CHILDREN’S ROOM</a>
+						</li>
+						<li class="submenu__item">
+							<a href="">BANSKY</a>
+						</li>
+						<li class="submenu__item">
+							<a href="">GAME CONSOLE</a>
+						</li>
+					</ul>
+				</li>
+				<li class="nav__item">
+					<a href="catalog.html">KATALOG</a>
+				</li>
+				<li class="nav__item">
+					<a href="feedback.html">HILFE & KONTAKT</a>
+				</li>
+				<li class="nav__item">
+					<a href="no-order.html">ÜBER UNS</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="header__icons">
+			<div class="header__user">
+				<a href="login.html">
+					<img src="img/user.svg" alt="User">
+				</a>
+			</div>
+			<div class="header__card">
+				<a id="open_card" href="">
+					<img src="img/card.svg" alt="Card">
+				</a>
+			</div>
+		</div>
+	</div>
+</header>
+			<main>
+				<section class="order-item">
+	<div class="order-item__images">
+		<div class="order-item__main-image">
+			<a href="img/cart1-item.png" data-fancybox="gallery">
+				<img src="img/cart1-item.png" alt="Головне зображення" />
+			</a>
+		</div>
+		<div class="order-item__thumbnail">
+			<div class="order-item__thumbnail-wrapper">
+				<a href="img/cart1-item.png" data-fancybox="gallery">
+					<img src="img/cart1-item.png" alt="Головне зображення" />
+				</a>
+				<a href="img/cart2.png" data-fancybox="gallery">
+					<img src="img/cart2.png" alt="Мініатюра 1" />
+				</a>
+				<a href="img/cart3.png" data-fancybox="gallery">
+					<img src="img/cart3.png" alt="Мініатюра 2" />
+				</a>
+				<a href="img/cart4.png" data-fancybox="gallery">
+					<img src="img/cart4.png" alt="Мініатюра 3" />
+				</a>
+				<a href="img/cart2.png" data-fancybox="gallery">
+					<img src="img/cart2.png" alt="Мініатюра 1" />
+				</a>
+				<a href="img/cart3.png" data-fancybox="gallery">
+					<img src="img/cart3.png" alt="Мініатюра 2" />
+				</a>
+				<a href="img/cart4.png" data-fancybox="gallery">
+					<img src="img/cart4.png" alt="Мініатюра 3" />
+				</a>
+				<a href="img/cart2.png" data-fancybox="gallery">
+					<img src="img/cart2.png" alt="Мініатюра 1" />
+				</a>
+				<a href="img/cart3.png" data-fancybox="gallery">
+					<img src="img/cart3.png" alt="Мініатюра 2" />
+				</a>
+				<a href="img/cart4.png" data-fancybox="gallery">
+					<img src="img/cart4.png" alt="Мініатюра 3" />
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="order-item__description">
+		<div class="order-item__param">
+			<div class="order-item__value">
+				<span>Rahmen:</span>
+				<input type="text" value="Ohne Rahmen" disabled>
+			</div>
+			<div class="order-item__select">
+				<img class="active" src="img/ram1.png" alt="Ohne Rahmen" id="1ram">
+				<img src="img/ram2.png" alt="2 Rahmen" id="2ram">
+				<img src="img/ram3.png" alt="3 Rahmen" id="3ram">
+				<img src="img/ram4.png" alt="4 Rahmen" id="4ram">
+				<img src="img/ram5.png" alt="5 Rahmen" id="5ram">
+				<img src="img/ram6.png" alt="6 Rahmen" id="6ram">
+				<img src="img/ram7.png" alt="7 Rahmen" id="7ram">
+			</div>
+		</div>
+		<div class="order-item__param">
+			<div class="order-item__value">
+				<span>Größe:</span>
+				<input id="input__din" type="text" value="4 x DIN A4 & 2 x DIN A3" disabled>
+			</div>
+			<div class="order-item__select order-item__select-button">
+				<button class="order-item__din active" id="din1" value="4 x DIN A4 & 2 x DIN A3">
+					4 x DIN A4 & 2 x DIN A3
+				</button>
+				<button class="order-item__din" id="din2" value="6 x DIN A3">
+					6 x DIN A3
+				</button>
+			</div>
+		</div>
+		<div class="order-item__info">
+			<div class="info__title">
+				<div class="info__desc">
+					Nº. 048 | 6er Pack
+					<span class="info__new">
+						Новинка
+					</span>
+					<span class="info__rec">
+						Рекомендуют 96%
+					</span>
+				</div>
+				<div class="info__title-text">
+					<h2>Achtsam Beige Strand</h2>
+					<span>192 Bewertungen</span>
+				</div>
+			</div>
+			<div class="info__price">
+				<h2>€34.90</h2>
+				<span>ca. €5.81 / Poster ohne Rahmen</span>
+			</div>
+			<div class="info__buttons">
+				<button class="info__button button">
+					В корзину
+				</button>
+				<button class="info__button-white button">
+					Быстрый заказ
+				</button>
+			</div>
+			<div class="info__icons">
+				<div id="prize" class="info__icons-item">Risikofrei 30 Tage testen</div>
+				<div id="ok-green" class="info__icons-item">Auf Lager</div>
+				<div id="car" class="info__icons-item">Lieferzeit 1-3 Tage</div>
+				<div id="map" class="info__icons-item">Made in Germany</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="cart">
+	<div class="cart__header title">
+		<h1>РЕКОМЕНДУЕМЫЕ</h1>
+		<a href="">
+			Alle ansehen
+			<span>
+				<svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<g id="Frame">
+						<path id="Vector" d="M1.25 7.20001L4.25 4.20001L1.25 1.20001" stroke="#272727" stroke-width="1.5" />
+					</g>
+				</svg>
+			</span>
+		</a>
+	</div>
+	<div class="cart__list">
+		<div class="cart__item">
+			<div class="cart__image">
+				<img src="img/cart1.png" alt="Tovar">
+			</div>
+			<div class="cart__title">
+				Goldenes Blatt Monstera
+			</div>
+			<div class="cart__price">
+				ab €34.90
+			</div>
+		</div>
+		<div class="cart__item">
+			<div class="cart__image">
+				<img src="img/cart2.png" alt="Tovar">
+			</div>
+			<div class="cart__title">
+				Goldenes Blatt Monstera
+			</div>
+			<div class="cart__price">
+				ab €34.90
+			</div>
+		</div>
+		<div class="cart__item">
+			<div class="cart__image">
+				<img src="img/cart3.png" alt="Tovar">
+			</div>
+			<div class="cart__title">
+				Goldenes Blatt Monstera
+			</div>
+			<div class="cart__price">
+				ab €34.90
+			</div>
+		</div>
+		<div class="cart__item">
+			<div class="cart__image">
+				<img src="img/cart4.png" alt="Tovar">
+			</div>
+			<div class="cart__title">
+				Goldenes Blatt Monstera
+			</div>
+			<div class="cart__price">
+				ab €34.90
+			</div>
+		</div>
+		<div class="cart__item">
+			<div class="cart__image">
+				<img src="img/cart5.png" alt="Tovar">
+			</div>
+			<div class="cart__title">
+				Goldenes Blatt Monstera
+			</div>
+			<div class="cart__price">
+				ab €34.90
+			</div>
+		</div>
+		<div class="cart__item">
+			<div class="cart__image">
+				<img src="img/cart6.png" alt="Tovar">
+			</div>
+			<div class="cart__title">
+				Goldenes Blatt Monstera
+			</div>
+			<div class="cart__price">
+				ab €34.90
+			</div>
+		</div>
+		<div class="cart__item">
+			<div class="cart__image">
+				<img src="img/cart7.png" alt="Tovar">
+			</div>
+			<div class="cart__title">
+				Goldenes Blatt Monstera
+			</div>
+			<div class="cart__price">
+				ab €34.90
+			</div>
+		</div>
+		<div class="cart__item">
+			<div class="cart__image">
+				<img src="img/cart8.png" alt="Tovar">
+			</div>
+			<div class="cart__title">
+				Goldenes Blatt Monstera
+			</div>
+			<div class="cart__price">
+				ab €34.90
+			</div>
+		</div>
+		<div class="cart__item">
+			<div class="cart__image">
+				<img src="img/cart9.png" alt="Tovar">
+			</div>
+			<div class="cart__title">
+				Goldenes Blatt Monstera
+			</div>
+			<div class="cart__price">
+				ab €34.90
+			</div>
+		</div>
+		<div class="cart__item">
+			<div class="cart__image">
+				<img src="img/cart10.png" alt="Tovar">
+			</div>
+			<div class="cart__title">
+				Goldenes Blatt Monstera
+			</div>
+			<div class="cart__price">
+				ab €34.90
+			</div>
+		</div>
+		<div class="cart__item">
+			<div class="cart__image">
+				<img src="img/cart11.png" alt="Tovar">
+			</div>
+			<div class="cart__title">
+				Goldenes Blatt Monstera
+			</div>
+			<div class="cart__price">
+				ab €34.90
+			</div>
+		</div>
+		<div class="cart__item">
+			<div class="cart__image">
+				<img src="img/cart12.png" alt="Tovar">
+			</div>
+			<div class="cart__title">
+				Goldenes Blatt Monstera
+			</div>
+			<div class="cart__price">
+				ab €34.90
+			</div>
+		</div>
+		<div class="cart__item">
+			<div class="cart__image">
+				<img src="img/cart13.png" alt="Tovar">
+			</div>
+			<div class="cart__title">
+				Goldenes Blatt Monstera
+			</div>
+			<div class="cart__price">
+				ab €34.90
+			</div>
+		</div>
+		<div class="cart__item">
+			<div class="cart__image">
+				<img src="img/cart14.png" alt="Tovar">
+			</div>
+			<div class="cart__title">
+				Goldenes Blatt Monstera
+			</div>
+			<div class="cart__price">
+				ab €34.90
+			</div>
+		</div>
+		<div class="cart__item">
+			<div class="cart__image">
+				<img src="img/cart15.png" alt="Tovar">
+			</div>
+			<div class="cart__title">
+				Goldenes Blatt Monstera
+			</div>
+			<div class="cart__price">
+				ab €34.90
+			</div>
+		</div>
+		<div class="cart__item">
+			<div class="cart__image">
+				<img src="img/cart16.png" alt="Tovar">
+			</div>
+			<div class="cart__title">
+				Goldenes Blatt Monstera
+			</div>
+			<div class="cart__price">
+				ab €34.90
+			</div>
+		</div>
+	</div>
+</section>
+<section class="comments">
+	<div class="comments__stats">
+		<div class="comments__rate">4.74</div>
+		<div class="comments__views">Basierend auf 192
+			Bewertungen</div>
+	</div>
+	<div class="comments__nav">
+		<div class="comments__sort">
+			<select name="sort_comments" id="sort_comments">
+				<option value="Sortien" selected>Sortien</option>
+				<option value="Sortien">Date</option>
+				<option value="Sortien">User</option>
+			</select>
+		</div>
+		<div class="comments__search">
+			<input type="text" placeholder="Suchen">
+		</div>
+	</div>
+	<div class="comments__list">
+		<div class="comments__item">
+			<div class="comments__user">
+				<div class="user__verify">Verified Customer</div>
+				<div class="user__name">Plasma
+					Kunststofftechnik
+					GmbH</div>
+				<div class="user__adress">Bretten, Deutschland</div>
+			</div>
+			<div class="comments__comment">
+				<div class="comment__text">
+					schnelle Bearbeitung. Gute Betreung. Qualität der Bilder sehr gut
+				</div>
+				<div class="comment__poll">
+					<div class="poll__question">Fanden Sie diese Bewertung hilfreich?</div>
+					<div class="poll__item">
+						<a href="#">Ja</a>
+						<a href="#">Melden</a>
+						<a href="#">Teilen</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="comments__item">
+			<div class="comments__user">
+				<div class="user__verify">Verified Customer</div>
+				<div class="user__name">Ivonne Krohn</div>
+				<div class="user__adress">Essen, Deutschland</div>
+			</div>
+			<div class="comments__comment">
+				<div class="comment__text">
+					Unser Poster-Set kam innerhalb kurzer Zeit nach der Bestellung, sehr gut verpackt bei uns an. Sowohl die
+					Qualität der
+					Poster als auch der von uns gewählten goldenen Alurahmen entsprachen der
+					beschriebenen guten Qualität. Jederzeit wieder!
+				</div>
+				<div class="comment__image">
+					<img src="img/comment-img.png" alt="Comment">
+				</div>
+				<div class="comment__poll">
+					<div class="poll__question">Fanden Sie diese Bewertung hilfreich?</div>
+					<div class="poll__item">
+						<a href="#">Ja</a>
+						<a href="#">Melden</a>
+						<a href="#">Teilen</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="comments__item">
+			<div class="comments__user">
+				<div class="user__verify">Verified Customer</div>
+				<div class="user__name">Ulrike Doczy</div>
+				<div class="user__adress">Gersdorf, Deutschland</div>
+			</div>
+			<div class="comments__comment">
+				<div class="comment__text">
+					Die Qualität der Poster und der Rahmen ist sehr gut. Ein Punkt Abzug dafür, weil die DIN A4 Rahmen keine
+					Aufhängevorrichtung besitzen.
+				</div>
+				<div class="comment__poll">
+					<div class="poll__question">Fanden Sie diese Bewertung hilfreich?</div>
+					<div class="poll__item">
+						<a href="#">Ja</a>
+						<a href="#">Melden</a>
+						<a href="#">Teilen</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="comments__item">
+			<div class="comments__user">
+				<div class="user__verify">Verified Customer</div>
+				<div class="user__name">Alena Ehlers</div>
+			</div>
+			<div class="comments__comment">
+				<div class="comment__text">
+					Tolle Qualität, schnelle Lieferung
+				</div>
+				<div class="comment__poll">
+					<div class="poll__question">Fanden Sie diese Bewertung hilfreich?</div>
+					<div class="poll__item">
+						<a href="#">Ja</a>
+						<a href="#">Melden</a>
+						<a href="#">Teilen</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+			</main>
+		</div>
+		<footer class="footer">
+	<div class="container">
+		<div class="footer__wrapper">
+			<div class="footer__block">
+				<div class="footer__info">
+					<div class="footer__logo">
+						<img src="img/logo__footer.svg" alt="NovArt">
+					</div>
+					<div class="footer__desc">
+						*Unser Kundenservice steht dir zu folgenden Zeiten zur Verfügung:
+						Mo-Fr: 10:00 - 16:00 Uhr
+					</div>
+				</div>
+				<div class="footer__payments">
+					<div class="payments__item">
+						<img src="img/amazon.svg" alt="Amazon">
+					</div>
+					<div class="payments__item">
+						<img src="img/amex.svg" alt="Amex">
+					</div>
+					<div class="payments__item">
+						<img src="img/iPay.svg" alt="IPay">
+					</div>
+					<div class="payments__item">
+						<img src="img/GPay.svg" alt="GooglePay">
+					</div>
+					<div class="payments__item">
+						<img src="img/Klarna.svg" alt="Kalrna">
+					</div>
+					<div class="payments__item">
+						<img src="img/maestro.svg" alt="Maestro">
+					</div>
+					<div class="payments__item">
+						<img src="img/mastercard.svg" alt="MasterCard">
+					</div>
+					<div class="payments__item">
+						<img src="img/paypal.svg" alt="paypal">
+					</div>
+					<div class="payments__item">
+						<img src="img/SPay.svg" alt="SPay">
+					</div>
+					<div class="payments__item">
+						<img src="img/sofort.svg" alt="Sofort">
+					</div>
+					<div class="payments__item">
+						<img src="img/unionpay.svg" alt="UnionPay">
+					</div>
+					<div class="payments__item">
+						<img src="img/visa.svg" alt="Visa">
+					</div>
+				</div>
+			</div>
+			<div class="footer__block">
+				<nav class="footer__nav">
+					<ul class="nav__list">
+						<li class="nav__item nav__toggle" data-submenu="poster">
+							<a href="#">
+								POSTER SETS
+								<svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<g id="Frame">
+										<path id="Vector" d="M1.72998 1.28999L5.72998 5.28999L9.72998 1.28999" stroke="#fff"
+											stroke-width="2" />
+									</g>
+								</svg>
+
+							</a>
+							<ul class="submenu__list" id="poster">
+								<li class="submenu__item">
+									<a href="">NEW</a>
+								</li>
+								<li class="submenu__item">
+									<a href="">SET OF 3 PICTURES</a>
+								</li>
+								<li class="submenu__item">
+									<a href="">BOHO</a>
+								</li>
+								<li class="submenu__item">
+									<a href="">NATURE</a>
+								</li>
+								<li class="submenu__item">
+									<a href="">KITCHEN</a>
+								</li>
+								<li class="submenu__item">
+									<a href="">HOME</a>
+								</li>
+								<li class="submenu__item">
+									<a href="">FASHION</a>
+								</li>
+								<li class="submenu__item">
+									<a href="">BEACH AND SEA</a>
+								</li>
+								<li class="submenu__item">
+									<a href="">CHILDREN’S ROOM</a>
+								</li>
+								<li class="submenu__item">
+									<a href="">BANSKY</a>
+								</li>
+								<li class="submenu__item">
+									<a href="">GAME CONSOLE</a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav__item">
+							<a href="#">KATALOG</a>
+						</li>
+						<li class="nav__item">
+							<a href="#">HILFE & KONTAKT</a>
+						</li>
+						<li class="nav__item">
+							<a href="#">ÜBER UNS</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="card__background"></div>
+<section class="card">
+	<div class="card__header">
+		<div class="card__header-title">
+			<h1>WARENKORB</h1>
+			<a id="close_card" href=""><img src="img/close.svg" alt="Close"></a>
+		</div>
+		<p>Deine Bestellung ist für kostenlosen Versand qualizifiert.</p>
+	</div>
+	<div class="card__main">
+		<div class="card__item">
+			<div class="item__img">
+				<img src="img/cart1.png" alt="Cart">
+			</div>
+			<div class="item__info">
+				<div class="item__title">
+					Achtsam Beige Strand
+				</div>
+				<div class="item__price">
+					69$
+				</div>
+				<div class="item__desc">
+					Ohne Rahmen / 4 x DIN A4 & 2 x DIN A3
+				</div>
+			</div>
+			<div class="item__count">
+				<input type="text" value="1">
+				<a href="">Entfernen</a>
+			</div>
+		</div>
+		<div class="card__item">
+			<div class="item__img">
+				<img src="img/cart1.png" alt="Cart">
+			</div>
+			<div class="item__info">
+				<div class="item__title">
+					Achtsam Beige Strand
+				</div>
+				<div class="item__price">
+					69$
+				</div>
+				<div class="item__desc">
+					Ohne Rahmen / 4 x DIN A4 & 2 x DIN A3
+				</div>
+			</div>
+			<div class="item__count">
+				<input type="text" value="1">
+				<a href="">Entfernen</a>
+			</div>
+		</div>
+		<div class="card__item">
+			<div class="item__img">
+				<img src="img/cart1.png" alt="Cart">
+			</div>
+			<div class="item__info">
+				<div class="item__title">
+					Achtsam Beige Strand
+				</div>
+				<div class="item__price">
+					69$
+				</div>
+				<div class="item__desc">
+					Ohne Rahmen / 4 x DIN A4 & 2 x DIN A3
+				</div>
+			</div>
+			<div class="item__count">
+				<input type="text" value="1">
+				<a href="">Entfernen</a>
+			</div>
+		</div>
+		<div class="card__item">
+			<div class="item__img">
+				<img src="img/cart1.png" alt="Cart">
+			</div>
+			<div class="item__info">
+				<div class="item__title">
+					Achtsam Beige Strand
+				</div>
+				<div class="item__price">
+					69$
+				</div>
+				<div class="item__desc">
+					Ohne Rahmen / 4 x DIN A4 & 2 x DIN A3
+				</div>
+			</div>
+			<div class="item__count">
+				<input type="text" value="1">
+				<a href="">Entfernen</a>
+			</div>
+		</div>
+		<div class="card__item">
+			<div class="item__img">
+				<img src="img/cart1.png" alt="Cart">
+			</div>
+			<div class="item__info">
+				<div class="item__title">
+					Achtsam Beige Strand
+				</div>
+				<div class="item__price">
+					69$
+				</div>
+				<div class="item__desc">
+					Ohne Rahmen / 4 x DIN A4 & 2 x DIN A3
+				</div>
+			</div>
+			<div class="item__count">
+				<input type="text" value="1">
+				<a href="">Entfernen</a>
+			</div>
+		</div>
+		<div class="card__item">
+			<div class="item__img">
+				<img src="img/cart1.png" alt="Cart">
+			</div>
+			<div class="item__info">
+				<div class="item__title">
+					Achtsam Beige Strand
+				</div>
+				<div class="item__price">
+					69$
+				</div>
+				<div class="item__desc">
+					Ohne Rahmen / 4 x DIN A4 & 2 x DIN A3
+				</div>
+			</div>
+			<div class="item__count">
+				<input type="text" value="1">
+				<a href="">Entfernen</a>
+			</div>
+		</div>
+		<div class="card__item">
+			<div class="item__img">
+				<img src="img/cart1.png" alt="Cart">
+			</div>
+			<div class="item__info">
+				<div class="item__title">
+					Achtsam Beige Strand
+				</div>
+				<div class="item__price">
+					69$
+				</div>
+				<div class="item__desc">
+					Ohne Rahmen / 4 x DIN A4 & 2 x DIN A3
+				</div>
+			</div>
+			<div class="item__count">
+				<input type="text" value="1">
+				<a href="">Entfernen</a>
+			</div>
+		</div>
+		<div class="card__item">
+			<div class="item__img">
+				<img src="img/cart1.png" alt="Cart">
+			</div>
+			<div class="item__info">
+				<div class="item__title">
+					Achtsam Beige Strand
+				</div>
+				<div class="item__price">
+					69$
+				</div>
+				<div class="item__desc">
+					Ohne Rahmen / 4 x DIN A4 & 2 x DIN A3
+				</div>
+			</div>
+			<div class="item__count">
+				<input type="text" value="1">
+				<a href="">Entfernen</a>
+			</div>
+		</div>
+	</div>
+	<div class="card__footer">
+		<div class="card__info">
+			<div class="card__title">
+				GESAMT
+			</div>
+			<div class="card__price">
+				€69.80
+			</div>
+		</div>
+		<div class="card__desc">
+			Inklusive Steuern. Versand wird beim Checkout berechnet
+		</div>
+		<button class="card__button button">
+			Zur Kasse
+		</button>
+	</div>
+</section>
+		<script src="js/app.min.js"></script>
+	</div>
+</body>
+
+</html>

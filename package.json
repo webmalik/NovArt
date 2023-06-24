@@ -51,5 +51,8 @@
 		"webp-converter": "2.2.3",
 		"webpack": "latest",
 		"webpack-stream": "latest"
+	},
+	"dependencies": {
+		"@fancyapps/ui": "^5.0.19"
 	}
 }

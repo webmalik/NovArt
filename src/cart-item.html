@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="uk-UA">
+
+@@include('html/head.html', {
+"title": "Головна сторінка"
+})
+
+<body>
+	<div class="wrapper">
+		<div class="container">
+			@@include("html/header.html", {})
+			<main>
+				@@include("html/cart-item.html", {})
+			</main>
+		</div>
+		@@include("html/footer.html", {})
+		@@include("html/scripts.html", {})
+	</div>
+</body>
+
+</html>
