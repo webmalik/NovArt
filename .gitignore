@@ -1,1 +1,3 @@
 /node_modules
+/gulp/config/ftp.json
+/gulp/config/dataFTP.js

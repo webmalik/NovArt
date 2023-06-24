@@ -1,16 +1,84 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -20,8 +88,18 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
@@ -29,16 +107,20 @@ body {
   line-height: 1;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
   content: "";
   content: none;
 }
@@ -61,6 +143,7 @@ a {
 /*
 	! Media mixin
 */
+
 .card__background {
   position: absolute;
   top: 0;
@@ -71,13 +154,18 @@ a {
   padding: 0 10px;
 }
 
-.card__main::-webkit-scrollbar, body::-webkit-scrollbar {
+.card__main::-webkit-scrollbar,
+body::-webkit-scrollbar {
   width: 0.3rem;
 }
-.card__main::-webkit-scrollbar-track, body::-webkit-scrollbar-track {
+
+.card__main::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
   background: #ffffff;
 }
-.card__main::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
+
+.card__main::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
   background-color: #71C8FF;
   border-radius: 20px;
   border: none;
@@ -88,9 +176,11 @@ body {
   font-size: 16px;
   background-color: #ffffff;
 }
+
 body::-webkit-scrollbar {
   width: 0.5rem;
 }
+
 body::-webkit-scrollbar-track {
   background: #ffffff;
 }
@@ -141,10 +231,12 @@ body::-webkit-scrollbar-track {
   cursor: pointer;
   margin: 0 auto;
 }
+
 .swiper-slide img {
   width: 100%;
   height: 40rem;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 main {
@@ -157,38 +249,46 @@ main {
 .header {
   transition: all 0.5s ease-in;
 }
+
 .header__wrapper {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
 }
+
 .header__logo {
   max-width: 4.375rem;
   cursor: pointer;
   z-index: 2;
 }
+
 .header__logo img {
   width: 4.375rem;
   height: 2.8125rem;
 }
+
 .header__icons {
   display: flex;
   justify-self: end;
   gap: 1.5rem;
   z-index: 2;
 }
+
 .header__user {
   max-width: 1.375rem;
   cursor: pointer;
 }
+
 .header__user img {
   width: 1.375rem;
   height: 1.375rem;
 }
+
 .header__card {
   max-width: 1.375rem;
   cursor: pointer;
 }
+
 .header__card img {
   width: 1.375rem;
   height: 1.375rem;
@@ -201,6 +301,7 @@ main {
   width: 100%;
   z-index: 2;
 }
+
 .nav__item {
   display: block;
   cursor: pointer;
@@ -211,16 +312,19 @@ main {
   line-height: 1.6rem;
   z-index: 2;
 }
+
 .nav__item.nav__toggle {
   padding-right: 1.61rem;
   transition: all 0.5s ease-in;
 }
+
 .nav__toggle {
   background-image: url("../img/arrow_down.svg");
   background-repeat: no-repeat;
   background-position: right;
   z-index: 1;
 }
+
 .nav__toggle a {
   position: relative;
   z-index: 3;
@@ -248,6 +352,7 @@ main {
   transition: all 0.2s ease-in;
   z-index: 2;
 }
+
 .submenu__item {
   color: #333;
   font-size: 1.5rem;
@@ -267,12 +372,14 @@ main {
   pointer-events: none;
   transition: all 0.2s ease-in;
 }
+
 .header__slug {
   color: #FFF;
   font-size: 0.9375rem;
   font-family: Gilroy;
   font-weight: 700;
 }
+
 .header__title {
   color: #FFF;
   font-size: 4rem;
@@ -283,6 +390,7 @@ main {
   padding-top: 1.79rem;
   padding-bottom: 2.13rem;
 }
+
 .header__button {
   background: #272727;
   padding: 1.07438rem 2.59938rem 1.04875rem 2.5625rem;
@@ -299,11 +407,13 @@ main {
 .cart {
   padding: 8rem 0;
 }
+
 .cart__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .cart__header a {
   position: relative;
   color: #272727;
@@ -312,6 +422,7 @@ main {
   font-weight: 300;
   line-height: 1.6rem;
 }
+
 .cart__header a:after {
   content: "";
   position: absolute;
@@ -324,6 +435,7 @@ main {
   background-size: 100% 1px;
   transition: all 0.3s ease-in-out;
 }
+
 .cart__header a span {
   display: inline-flex;
   width: 1.5rem;
@@ -336,26 +448,33 @@ main {
   background: rgba(39, 39, 39, 0.1);
   transition: all 0.3s ease-in-out;
 }
+
 .cart__header a:hover::after {
   width: 68%;
 }
+
 .cart__header a:hover span {
   background-color: #272727;
 }
+
 .cart__header a:hover span svg path {
   stroke: #ffffff;
 }
+
 .cart__list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 3rem 1.5rem;
   padding-top: 2rem;
 }
+
 .cart__image img {
   max-width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
+
 .cart__title {
   color: #272727;
   text-align: center;
@@ -365,6 +484,7 @@ main {
   line-height: 1.6rem;
   padding-top: 1.5rem;
 }
+
 .cart__price {
   color: rgba(39, 39, 39, 0.7);
   text-align: center;
@@ -380,10 +500,12 @@ main {
   gap: 1.88rem;
   padding: 8rem 0 6.12rem;
 }
+
 .promo__item {
   text-align: center;
   width: 100%;
 }
+
 .promo__title {
   color: #272727;
   text-align: center;
@@ -394,6 +516,7 @@ main {
   text-transform: uppercase;
   padding: 1.86rem 0 1.31rem;
 }
+
 .promo__desc {
   color: #272727;
   text-align: center;
@@ -407,11 +530,13 @@ main {
   background-color: #272727;
   padding-top: 4rem;
 }
+
 .footer__wrapper {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 4.74rem;
 }
+
 .footer__info {
   display: flex;
   width: 100%;
@@ -419,12 +544,15 @@ main {
   justify-content: space-between;
   align-items: center;
 }
+
 .footer__logo {
   width: 9.81944rem;
 }
+
 .footer__logo img {
   width: 100%;
 }
+
 .footer__desc {
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.9375rem;
@@ -433,20 +561,24 @@ main {
   font-weight: 300;
   line-height: 1.6rem;
 }
+
 .footer__payments {
   display: flex;
   gap: 0.5rem;
   padding-top: 3.28rem;
 }
+
 .footer__nav .nav__list {
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 0 0 4.5rem;
 }
+
 .footer__nav .nav__item {
   background: none;
 }
+
 .footer__nav .nav__item a {
   color: #FFF;
   font-size: 1.33131rem;
@@ -454,18 +586,22 @@ main {
   font-weight: 700;
   line-height: 2.43438rem;
 }
+
 .footer__nav .nav__toggle {
   position: relative;
   padding: 0;
 }
+
 .footer__nav .nav__toggle svg {
   padding-left: 2rem;
 }
+
 .footer__nav .nav__toggle:hover > .submenu__list {
   top: 0;
   opacity: 1;
   padding-top: 0;
 }
+
 .footer__nav .submenu__list {
   display: block;
   position: relative;
@@ -475,9 +611,11 @@ main {
   opacity: 1;
   background-color: transparent;
 }
+
 .footer__nav .submenu__item {
   background-color: transparent;
 }
+
 .footer__nav .submenu__item a {
   color: rgba(255, 255, 255, 0.8);
   font-size: 1.125rem;
@@ -504,6 +642,7 @@ main {
   z-index: 99;
   transition: all 0.4s ease-in-out;
 }
+
 .card__background {
   display: none;
   opacity: 0;
@@ -511,11 +650,13 @@ main {
   z-index: 90;
   transition: all 0.4s ease-in-out;
 }
+
 .card__header {
   display: flex;
   flex-direction: column;
   border-bottom: 3px solid #333;
 }
+
 .card__header p {
   color: #000;
   font-size: 0.875rem;
@@ -524,10 +665,12 @@ main {
   line-height: 1.6rem;
   padding: 0.62rem 0;
 }
+
 .card__header-title {
   display: flex;
   justify-content: space-between;
 }
+
 .card__header-title h1 {
   color: #000;
   font-size: 1.5rem;
@@ -535,30 +678,37 @@ main {
   font-weight: 700;
   line-height: 1.6rem;
 }
+
 .card__header-title img {
   max-width: 0.73138rem;
   cursor: pointer;
 }
+
 .card__main {
   overflow-y: auto;
   overflow-x: hidden;
 }
+
 .card__item {
   display: grid;
   padding-top: 1.56rem;
   grid-template-columns: minmax(5rem, auto) 1fr minmax(5rem, auto);
 }
+
 .card__item img {
   width: 100%;
 }
+
 .card__footer {
   padding: 1.81rem 0 0 0;
   border-top: 1px solid rgba(51, 51, 51, 0.15);
 }
+
 .card__info {
   display: flex;
   justify-content: space-between;
 }
+
 .card__title {
   color: #333;
   font-size: 1.5rem;
@@ -566,6 +716,7 @@ main {
   font-weight: 500;
   line-height: 1.6rem;
 }
+
 .card__price {
   color: #333;
   font-size: 1.5rem;
@@ -573,12 +724,14 @@ main {
   font-weight: 500;
   line-height: 1.6rem;
 }
+
 .card__desc {
   color: rgba(51, 51, 51, 0.4);
   font-size: 0.875rem;
   font-family: Gilroy;
   padding: 0.63rem 0 1.81rem;
 }
+
 .card__button {
   width: 100%;
   height: 3.4375rem;
@@ -589,12 +742,14 @@ main {
 .item__img {
   max-width: 5rem;
 }
+
 .item__info {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   margin-left: 0.94rem;
 }
+
 .item__title {
   color: #333;
   font-size: 0.875rem;
@@ -602,6 +757,7 @@ main {
   font-weight: 500;
   line-height: 1.6rem;
 }
+
 .item__price {
   color: #333;
   font-size: 0.875rem;
@@ -609,11 +765,13 @@ main {
   font-weight: 300;
   line-height: 1.6rem;
 }
+
 .item__desc {
   color: #333;
   font-size: 0.875rem;
   font-family: Gilroy;
 }
+
 .item__count {
   text-align: center;
   display: flex;
@@ -621,11 +779,19 @@ main {
   justify-content: space-evenly;
   align-items: center;
 }
+
 .item__count input {
   width: 2.8125rem;
   height: 1.9375rem;
   text-align: center;
+  color: #333;
+  font-size: 1rem;
+  font-family: Gilroy;
+  font-weight: 500;
+  border-radius: 2px;
+  border: 1px solid rgba(51, 51, 51, 0.15);
 }
+
 .item__count a {
   color: #333;
   font-size: 1rem;

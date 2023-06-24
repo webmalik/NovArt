@@ -1,6 +1,8 @@
+import { dataFTP } from './dataFTP.js'
+
 export let configFTP = {
-	host: "109.94.209.117",
-	user: "webmalik",
-	password: "odino4ka_9_malik",
+	host: dataFTP.host,
+	user: dataFTP.user,
+	password: dataFTP.password,
 	parallel: 5
 }
