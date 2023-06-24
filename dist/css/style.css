@@ -727,6 +727,16 @@ main {
   text-transform: uppercase;
   z-index: 0;
 }
+.form__subtitle {
+  color: rgba(39, 39, 39, 0.7);
+  padding: 1.25rem 0;
+  margin-bottom: -2.88rem;
+  text-align: center;
+  font-size: 1.125rem;
+  font-family: Gilroy;
+  font-weight: 300;
+  line-height: 1.6rem;
+}
 .form__main form {
   display: flex;
   gap: 1rem;
@@ -766,6 +776,7 @@ main {
   font-family: Gilroy;
   font-weight: 700;
   line-height: 1.6rem;
+  margin-top: 1.5rem;
   padding: 1.26rem 0 1.3rem;
 }
 .form__link-center {
