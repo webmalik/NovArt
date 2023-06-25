@@ -5,6 +5,8 @@
 @import "_variables";
 @import "_root";
 @import "_components";
+@import "_burger-icon";
+
 
 .header {
 	transition: all 0.5s ease-in;
@@ -15,6 +17,10 @@
 		align-items: center ;
 	}
 
+	&__burger {
+		display: none;
+	}
+
 	&__logo {
 		max-width: 4.375rem;
 		cursor: pointer;
@@ -23,10 +29,6 @@
 			height: 2.8125rem;
 		}
 		z-index: 2;
-	}
-
-	&__nav {
-		
 	}
 
 	&__icons {
@@ -132,6 +134,10 @@
 		flex-wrap: wrap;
 		transition: all 0.2s ease-in;
 		z-index: 2;
+	}
+
+	a#down__submenu {
+		display: none;
 	}
 
 	&__item {
@@ -451,7 +457,7 @@
 	top: 0;
 	right: -41rem;
 	background-color: $white_color;
-	z-index: 99;
+	z-index: 21;
 	transition: all .4s ease-in-out;
 
 	&__background {
@@ -459,7 +465,7 @@
 		display: none;
 		opacity: 0;
 		background: rgba(0, 0, 0, 0.30);
-		z-index: 90;
+		z-index: 20;
 		transition: all .4s ease-in-out;
 	}
 	
@@ -872,7 +878,7 @@ main {
 
 		label {
 			font-weight: 400;
-			font-size: 22px;
+			font-size: 1.375rem;
 			line-height: 130%;
 			color: #AAAAAA;
 			margin-bottom: 6px;
@@ -1435,3 +1441,5 @@ main {
 		}
 	}
 }
+
+@import "_media";

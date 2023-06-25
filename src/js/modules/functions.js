@@ -39,42 +39,46 @@ export function swiper_init() {
 }
 
 export function fix() {
+	const screenWidth = window.innerWidth
 	const nav__toggle = $('.nav__toggle')
 	const submenu = $('.submenu__list')
 	const header__info = $('.header__info')
+	const header__info_ = $('.header__info_')
 	const nav__link = $('.nav__main .nav__item a')
 	const logo_img = $('#logo_img')
 	const user_img = $('#user_img')
 	const card_img = $('#card_img')
 
-	nav__toggle.on('mouseover', function () {
-		header__info.css('opacity', '0')
-		nav__link.css('color', '#333')
-		logo_img.attr('src', 'img/logo.svg')
-		user_img.attr('src', 'img/user.svg')
-		card_img.attr('src', 'img/card.svg')
-	})
-	submenu.on('mouseover', function () {
-		header__info.css('opacity', '0')
-		nav__link.css('color', '#333')
-		logo_img.attr('src', 'img/logo.svg')
-		user_img.attr('src', 'img/user.svg')
-		card_img.attr('src', 'img/card.svg')
-	})
-	nav__toggle.on('mouseleave', function () {
-		header__info.css('opacity', '1')
-		nav__link.css('color', '#fff')
-		logo_img.attr('src', 'img/logo-white.svg')
-		user_img.attr('src', 'img/user-white.svg')
-		card_img.attr('src', 'img/card-white.svg')
-	})
-	submenu.on('mouseleave', function () {
-		header__info.css('opacity', '1')
-		nav__link.css('color', '#fff')
-		logo_img.attr('src', 'img/logo-white.svg')
-		user_img.attr('src', 'img/user-white.svg')
-		card_img.attr('src', 'img/card-white.svg')
-	})
+	if (screenWidth > 992) {
+		nav__toggle.on('mouseover', function () {
+			header__info.css('opacity', '0')
+			nav__link.css('color', '#333')
+			logo_img.attr('src', 'img/logo.svg')
+			user_img.attr('src', 'img/user.svg')
+			card_img.attr('src', 'img/card.svg')
+		})
+		submenu.on('mouseover', function () {
+			header__info.css('opacity', '0')
+			nav__link.css('color', '#333')
+			logo_img.attr('src', 'img/logo.svg')
+			user_img.attr('src', 'img/user.svg')
+			card_img.attr('src', 'img/card.svg')
+		})
+		nav__toggle.on('mouseleave', function () {
+			header__info.css('opacity', '1')
+			nav__link.css('color', '#fff')
+			logo_img.attr('src', 'img/logo-white.svg')
+			user_img.attr('src', 'img/user-white.svg')
+			card_img.attr('src', 'img/card-white.svg')
+		})
+		submenu.on('mouseleave', function () {
+			header__info.css('opacity', '1')
+			nav__link.css('color', '#fff')
+			logo_img.attr('src', 'img/logo-white.svg')
+			user_img.attr('src', 'img/user-white.svg')
+			card_img.attr('src', 'img/card-white.svg')
+		})
+	}
 }
 
 export function filter() {
@@ -121,7 +125,9 @@ export function card() {
 		e.preventDefault()
 		card_window.css('right', '0')
 		card_background.css('display', 'block')
-		card_background.css('opacity', 1)
+		setTimeout(function () {
+			card_background.css('opacity', 1)
+		}, 250)
 	})
 
 	card_background.on('click', function (e) {
@@ -133,60 +139,60 @@ export function card() {
 		}, 500)
 	})
 }
-
+const order = $('.order-item')
 export function fancy() {
 	const mainImageLink = document.querySelector('.order-item__main-image a');
 	const thumbnailImages = document.querySelectorAll('.order-item__thumbnail img');
-
 	const thumbnailArray = Array.from(thumbnailImages);
 	const galleryItems = thumbnailArray.map((thumbnail) => ({
 		src: thumbnail.getAttribute('src'),
 		caption: thumbnail.getAttribute('alt')
 	}));
-
-	mainImageLink.addEventListener('click', (event) => {
-		event.preventDefault();
-
-		const mainImageIndex = thumbnailArray.findIndex((thumbnail) => {
-			const thumbnailSrc = thumbnail.getAttribute('src');
-			return thumbnailSrc === mainImageLink.querySelector('img').getAttribute('src');
-		});
-
-		Fancybox.show(galleryItems, {
-			startIndex: mainImageIndex,
-			onClose: () => {
-				mainImageLink.innerHTML = '';
-			}
-		});
-	});
-
-	thumbnailImages.forEach((thumbnail, index) => {
-		thumbnail.addEventListener('click', (event) => {
+	//console.log(mainImageLink)
+	if (order.length == 1) {
+		mainImageLink.addEventListener('click', (event) => {
 			event.preventDefault();
 
-			const imagePath = thumbnail.getAttribute('src');
-			const imageCaption = thumbnail.getAttribute('alt');
+			const mainImageIndex = thumbnailArray.findIndex((thumbnail) => {
+				const thumbnailSrc = thumbnail.getAttribute('src');
+				return thumbnailSrc === mainImageLink.querySelector('img').getAttribute('src');
+			});
 
-			mainImageLink.innerHTML = `<img src="${imagePath}" alt="${imageCaption}" />`;
-
-			// Переміщення мініатюр до позиції 1
-			thumbnailArray.forEach((thumb, thumbIndex) => {
-				if (thumbIndex === 0) {
-					thumb.classList.add('active');
-				} else {
-					thumb.classList.remove('active');
+			Fancybox.show(galleryItems, {
+				startIndex: mainImageIndex,
+				onClose: () => {
+					mainImageLink.innerHTML = '';
 				}
 			});
+		});
 
-			// Прокручування до видимої мініатюри
-			thumbnail.scrollIntoView({
-				behavior: 'smooth',
-				block: 'nearest',
-				inline: 'start'
+		thumbnailImages.forEach((thumbnail, index) => {
+			thumbnail.addEventListener('click', (event) => {
+				event.preventDefault();
+
+				const imagePath = thumbnail.getAttribute('src');
+				const imageCaption = thumbnail.getAttribute('alt');
+
+				mainImageLink.innerHTML = `<img src="${imagePath}" alt="${imageCaption}" />`;
+
+				// Переміщення мініатюр до позиції 1
+				thumbnailArray.forEach((thumb, thumbIndex) => {
+					if (thumbIndex === 0) {
+						thumb.classList.add('active');
+					} else {
+						thumb.classList.remove('active');
+					}
+				});
+
+				// Прокручування до видимої мініатюри
+				thumbnail.scrollIntoView({
+					behavior: 'smooth',
+					block: 'nearest',
+					inline: 'start'
+				});
 			});
 		});
-	});
-
+	}
 	Fancybox.bind('[data-fancybox="gallery"]', {
 		toolbar: "auto",
 		loop: true,
@@ -206,55 +212,135 @@ export function fancy() {
 export function selectborder() {
 	const imageContainer = document.querySelector('.order-item__select');
 	const inputElement = document.querySelector('.order-item__value input');
+	if (order.length == 1) {
+		imageContainer.addEventListener('click', (event) => {
+			const clickedImage = event.target;
 
-	imageContainer.addEventListener('click', (event) => {
-		const clickedImage = event.target;
-
-		if (clickedImage.tagName === 'IMG') {
-			const allImages = imageContainer.querySelectorAll('img');
-			allImages.forEach((image) => {
-				image.classList.remove('active');
-			});
-			clickedImage.classList.add('active');
-			const altText = clickedImage.getAttribute('alt');
-			inputElement.value = altText;
-		}
-	});
+			if (clickedImage.tagName === 'IMG') {
+				const allImages = imageContainer.querySelectorAll('img');
+				allImages.forEach((image) => {
+					image.classList.remove('active');
+				});
+				clickedImage.classList.add('active');
+				const altText = clickedImage.getAttribute('alt');
+				inputElement.value = altText;
+			}
+		});
+	}
 }
 
 export function din() {
 	const buttonContainer = document.querySelector('.order-item__select-button');
 	const inputElement = document.querySelector('#input__din');
+	if (order.length == 1) {
+		buttonContainer.addEventListener('click', (event) => {
+			const clickedButton = event.target;
 
-	buttonContainer.addEventListener('click', (event) => {
-		const clickedButton = event.target;
+			if (clickedButton.tagName === 'BUTTON') {
+				const allButtons = buttonContainer.querySelectorAll('button');
+				allButtons.forEach((button) => {
+					button.classList.remove('active');
+				});
 
-		if (clickedButton.tagName === 'BUTTON') {
-			const allButtons = buttonContainer.querySelectorAll('button');
-			allButtons.forEach((button) => {
-				button.classList.remove('active');
-			});
+				clickedButton.classList.add('active');
 
-			clickedButton.classList.add('active');
-
-			const buttonValue = clickedButton.innerText;
-			inputElement.value = buttonValue;
-		}
-	});
+				const buttonValue = clickedButton.innerText;
+				inputElement.value = buttonValue;
+			}
+		});
+	}
 }
 
 export function item_location() {
 	let item = $('.cart__item')
 	item.on('click', function () {
 		location.assign('cart-item.html')
+		console.log('1')
 	})
 }
 
 export function burgerMenu() {
-	$('.header__burger').on("click", function (event) {
-		$('.header__burger, .header__menu').toggleClass('active');
-		$('body').toggleClass('lock');
+	const card_background = $('.card__background')
+	const header__burger = $('.header__burger')
+	const header__nav = $('.header__nav')
+	const header__nav_item = $('.nav__item>a')
+	const body = $('body')
+	const nav__toggle = $('.nav__toggle')
+	const submenu = $('.submenu__list')
+	const back = $('#down__submenu')
+
+	let burger = true
+	let toggle = true
+
+	header__burger.on("click", function (event) {
+		event.preventDefault()
+		if (burger) {
+			header__burger.addClass('active')
+			header__nav.addClass('active')
+			card_background.css('display', 'block')
+			setTimeout(function () {
+				card_background.css('opacity', 1)
+			}, 250)
+			body.addClass('lock')
+			burger = false
+		} else {
+			header__burger.removeClass('active')
+			header__nav.removeClass('active')
+			card_background.css('opacity', 0)
+			setTimeout(function () {
+				card_background.css('display', 'none')
+			}, 250)
+			body.removeClass('lock')
+			burger = true
+			event.preventDefault()
+			submenu.removeClass('active')
+			header__nav_item.css('display', 'inline')
+			back.css('display', 'none')
+			submenu.addClass('true')
+			toggle = true
+		}
 	});
+
+	card_background.on('click', function (event) {
+		header__burger.removeClass('active')
+		header__nav.removeClass('active')
+		card_background.css('opacity', 0)
+		setTimeout(function () {
+			card_background.css('display', 'none')
+		}, 250)
+		body.removeClass('lock')
+		burger = true
+		event.preventDefault()
+		submenu.removeClass('active')
+		header__nav_item.css('display', 'inline')
+		back.css('display', 'none')
+		submenu.addClass('true')
+		toggle = true
+	})
+
+	nav__toggle.on("click", function (event) {
+		event.preventDefault()
+		if (toggle) {
+			submenu.addClass('active')
+			header__nav_item.css('display', 'none')
+			back.css('display', 'block')
+			submenu.addClass('active')
+			toggle = false
+		}
+
+		back.on("click", function (event) {
+			event.preventDefault()
+			submenu.removeClass('active')
+			header__nav_item.css('display', 'inline')
+			back.css('display', 'none')
+			submenu.addClass('true')
+			toggle = true
+		});
+	});
+
+
+
+
 }
 
 export function sticky() {

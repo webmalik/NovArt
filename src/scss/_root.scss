@@ -1,3 +1,7 @@
+html {
+	font-size: 16px;
+}
+
 body {
 	font-family: "Gilroy";
 	font-size: 16px;
@@ -5,11 +9,14 @@ body {
 	@extend %scroll;
 	&::-webkit-scrollbar {
 		width: 0.5rem;
-		
 	}
 	&::-webkit-scrollbar-track {
 		background: $white_color;
 	}
+}
+
+.lock {
+	overflow: hidden;
 }
 
 .wrapper {

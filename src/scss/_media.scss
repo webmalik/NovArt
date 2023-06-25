@@ -1,0 +1,157 @@
+@import "_variables";
+@import "_mixins";
+
+@include media-width($xl) {
+	html {
+		font-size: 15px;
+	}
+
+	.container {
+		padding: 0 8rem;
+	}
+}
+
+@include media-width($lg) {
+	html {
+		font-size: 14px;
+	}
+
+	.container {
+		padding: 0 6rem;
+	}
+}
+
+@include media-width($md) {
+	// html {
+	// 	font-size: 13px;
+	// }
+
+	.container {
+		padding: 0 4rem;
+	}
+
+	.footer__wrapper {
+		grid-template-columns: 1fr;
+	}
+
+	.header {
+
+		&__wrapper {
+			align-items: center;
+			align-content: center;
+		}
+		&__burger {
+			display: block;
+			z-index: 23;
+		}
+		&__logo {
+			margin: 0 auto	;
+			padding: 2rem 0;
+			
+		}
+		&__main {
+			.nav__main {
+				a {
+					color: #333!important;
+				}
+			}
+
+			.header__burger.active span {
+				background-color: #333!important;
+			}
+		}
+		&__nav {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: -20rem;
+			min-width: 28%;
+			background-color: #fff;
+			padding-top: 6rem;
+			z-index: 22;
+			transition: all 0.3s ease-in-out;
+
+			&.active {
+				left: 0rem;
+			}
+		}
+	}
+
+	.nav {
+		&__list {
+			flex-direction: column;
+			gap: 3rem;
+			padding: 2rem;
+		}
+
+		&__toggle {
+			background-image: url('../img/arrow-right.svg')!important;
+			background-position: 12rem!important;
+			font-size: 1.2rem;
+		}
+	}
+
+	a#down__submenu {
+		position: absolute;
+		display: none;
+		right: 0;
+		width: 3rem;
+		height: 3rem;
+		margin-top: -2rem;
+		background-image: url('../img/arrow-left.svg');
+		background-repeat: no-repeat;
+		background-position: top 0.4rem left 3px;
+		z-index: 26;
+	}
+
+	.submenu__list {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		top: 0;
+		bottom: 0;
+		left: -30rem;
+		width: 100%;
+		padding: 6rem 0 0 2rem;
+		opacity: 1;
+		min-width: 28%;
+		background-color: #fff;
+		z-index: 25;
+
+		&.active {
+			left: 0rem;
+		}
+
+		.submenu__item {
+			font-size: 1rem;
+			z-index: 25;
+			background-color: #fff;
+		}
+	}
+
+	.nav__toggle:hover>.submenu__list {
+		//top: 0rem;
+		opacity: 1;
+		padding-top: 6rem;
+	}
+}
+
+@include media-width($sm) {
+	// html {
+	// 	font-size: 12px;
+	// }
+
+	.container {
+		padding: 0 2rem;
+	}
+}
+
+@include media-width($xs) {
+	html {
+		font-size: 10px;
+	}
+
+	.container {
+		padding: 0 1rem;
+	}
+}
