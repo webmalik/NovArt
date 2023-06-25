@@ -19,6 +19,12 @@
 }
 @font-face {
   font-family: "Gilroy";
+  src: url("../fonts/Gilroy-Regular.woff") format("woff"), url("../fonts/Gilroy-Regular.woff2") format("woff2");
+  font-weight: Regular;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gilroy";
   src: url("../fonts/Gilroy-Medium.woff") format("woff"), url("../fonts/Gilroy-Medium.woff2") format("woff2");
   font-weight: Medium;
   font-style: normal;
@@ -39,12 +45,6 @@
   font-family: "Gilroy";
   src: url("../fonts/Gilroy-SemiBold.woff") format("woff"), url("../fonts/Gilroy-SemiBold.woff2") format("woff2");
   font-weight: SemiBold;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Gilroy";
-  src: url("../fonts/Gilroy-Regular.woff") format("woff"), url("../fonts/Gilroy-Regular.woff2") format("woff2");
-  font-weight: Regular;
   font-style: normal;
 }
 html, body, div, span, applet, object, iframe,
@@ -812,7 +812,6 @@ main {
 }
 .nav__main .nav__toggle {
   background-image: url("../img/arrow_down-white.svg");
-  background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
 }
@@ -834,7 +833,6 @@ main {
   background-image: url("../img/arrow_down.svg");
   background-repeat: no-repeat;
   background-position: right;
-  background-size: contain;
   z-index: 1;
 }
 .nav__toggle a {
@@ -1612,6 +1610,7 @@ main {
   width: 1.25rem;
   height: 1.25rem;
   background-image: url("../img/verify.svg");
+  background-repeat: no-repeat;
   background-size: contain;
 }
 .user__name {
