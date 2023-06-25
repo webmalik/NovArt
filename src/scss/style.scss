@@ -75,6 +75,7 @@
 		}
 		.nav__toggle {
 			background-image: url('@img/arrow_down-white.svg');
+			background-size: contain;
 			background-repeat: no-repeat;
 			background-position: right;
 		}
@@ -101,6 +102,7 @@
 		background-image: url('@img/arrow_down.svg');
 		background-repeat: no-repeat;
 		background-position: right;
+		background-size: contain;
 		z-index: 1;
 		a {
 			position: relative;
@@ -976,6 +978,7 @@ main {
 			padding-left: 1.69rem;
 			background-image: url('@img/glass.svg');
 			background-repeat: no-repeat;
+			background-size: contain;
 			background-position: center left;
 			border: none;
 
@@ -1038,6 +1041,7 @@ main {
 			width: 1.25rem;
 			height: 1.25rem;
 			background-image: url('@img/verify.svg');
+			background-size: contain;
 		}
 	}
 
@@ -1070,6 +1074,9 @@ main {
 	&__image {
 		width: 5rem;
 		height: 5rem;
+		img {
+			width: 100%;
+		}
 	}
 
 	&__poll {
@@ -1375,6 +1382,7 @@ main {
 				left: 0;
 				top: 0;
 				background-image: url('@img/prize.svg');
+				background-size: contain;
 				background-position: center;
 				background-repeat: no-repeat;
 			}
@@ -1391,6 +1399,7 @@ main {
 				left: 0;
 				top: 0;
 				background-image: url('@img/ok-green.svg');
+				background-size: contain;
 				background-position: center;
 				background-repeat: no-repeat;
 			}
@@ -1407,6 +1416,7 @@ main {
 				left: 0;
 				top: 0;
 				background-image: url('@img/car.svg');
+				background-size: contain;
 				background-position: center;
 				background-repeat: no-repeat;
 			}
@@ -1421,6 +1431,7 @@ main {
 				bottom: 0;
 				margin: 0 auto;
 				background-image: url('@img/dhl.png');
+				background-size: contain;
 				background-position: center;
 				background-repeat: no-repeat;
 			}
@@ -1435,6 +1446,7 @@ main {
 				left: 0;
 				top: 0;
 				background-image: url('@img/map.svg');
+				background-size: contain;
 				background-position: center;
 				background-repeat: no-repeat;
 			}

@@ -6,6 +6,9 @@ import 'swiper/swiper.css';
 import { Fancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
+const screenWidth = window.innerWidth
+const order = $('.order-item')
+
 export function isWebp() {
 	function testWebP(callback) {
 
@@ -39,11 +42,9 @@ export function swiper_init() {
 }
 
 export function fix() {
-	const screenWidth = window.innerWidth
 	const nav__toggle = $('.nav__toggle')
 	const submenu = $('.submenu__list')
 	const header__info = $('.header__info')
-	const header__info_ = $('.header__info_')
 	const nav__link = $('.nav__main .nav__item a')
 	const logo_img = $('#logo_img')
 	const user_img = $('#user_img')
@@ -86,7 +87,11 @@ export function filter() {
 	const filter = $('.order__filter')
 	const wrapper = $('.order__wrapper')
 	let active = true
-
+	if (screenWidth < 992) {
+		active = false
+		filter.hide()
+		filter.addClass('filter-noactive')
+	}
 	link.on('click', function (e) {
 		if (active) {
 			filter.addClass('filter-noactive')
@@ -97,9 +102,22 @@ export function filter() {
 			active = false
 		} else {
 			filter.show();
-			setTimeout(function () {
-				wrapper.css('grid-template-columns', '1fr 3fr')
-			}, 100)
+			if (screenWidth > 992) {
+				setTimeout(function () {
+					wrapper.css('grid-template-columns', '1fr 3fr')
+				}, 100)
+			} else {
+				if (screenWidth < 767) {
+					setTimeout(function () {
+						wrapper.css('grid-template-columns', '1fr')
+					}, 100)
+				} else {
+					setTimeout(function () {
+						wrapper.css('grid-template-columns', '2fr 3fr')
+					}, 100)
+				}
+			}
+
 			filter.removeClass('filter-noactive')
 			active = true
 		}
@@ -139,7 +157,7 @@ export function card() {
 		}, 500)
 	})
 }
-const order = $('.order-item')
+
 export function fancy() {
 	const mainImageLink = document.querySelector('.order-item__main-image a');
 	const thumbnailImages = document.querySelectorAll('.order-item__thumbnail img');
@@ -271,19 +289,37 @@ export function burgerMenu() {
 
 	let burger = true
 	let toggle = true
+	if (screenWidth < 992) {
+		header__burger.on("click", function (event) {
+			event.preventDefault()
+			if (burger) {
+				header__burger.addClass('active')
+				header__nav.addClass('active')
+				card_background.css('display', 'block')
+				setTimeout(function () {
+					card_background.css('opacity', 1)
+				}, 250)
+				body.addClass('lock')
+				burger = false
+			} else {
+				header__burger.removeClass('active')
+				header__nav.removeClass('active')
+				card_background.css('opacity', 0)
+				setTimeout(function () {
+					card_background.css('display', 'none')
+				}, 250)
+				body.removeClass('lock')
+				burger = true
+				event.preventDefault()
+				submenu.removeClass('active')
+				header__nav_item.css('display', 'inline')
+				back.css('display', 'none')
+				submenu.addClass('true')
+				toggle = true
+			}
+		});
 
-	header__burger.on("click", function (event) {
-		event.preventDefault()
-		if (burger) {
-			header__burger.addClass('active')
-			header__nav.addClass('active')
-			card_background.css('display', 'block')
-			setTimeout(function () {
-				card_background.css('opacity', 1)
-			}, 250)
-			body.addClass('lock')
-			burger = false
-		} else {
+		card_background.on('click', function (event) {
 			header__burger.removeClass('active')
 			header__nav.removeClass('active')
 			card_background.css('opacity', 0)
@@ -298,49 +334,28 @@ export function burgerMenu() {
 			back.css('display', 'none')
 			submenu.addClass('true')
 			toggle = true
-		}
-	});
+		})
 
-	card_background.on('click', function (event) {
-		header__burger.removeClass('active')
-		header__nav.removeClass('active')
-		card_background.css('opacity', 0)
-		setTimeout(function () {
-			card_background.css('display', 'none')
-		}, 250)
-		body.removeClass('lock')
-		burger = true
-		event.preventDefault()
-		submenu.removeClass('active')
-		header__nav_item.css('display', 'inline')
-		back.css('display', 'none')
-		submenu.addClass('true')
-		toggle = true
-	})
-
-	nav__toggle.on("click", function (event) {
-		event.preventDefault()
-		if (toggle) {
-			submenu.addClass('active')
-			header__nav_item.css('display', 'none')
-			back.css('display', 'block')
-			submenu.addClass('active')
-			toggle = false
-		}
-
-		back.on("click", function (event) {
+		nav__toggle.on("click", function (event) {
 			event.preventDefault()
-			submenu.removeClass('active')
-			header__nav_item.css('display', 'inline')
-			back.css('display', 'none')
-			submenu.addClass('true')
-			toggle = true
+			if (toggle) {
+				submenu.addClass('active')
+				header__nav_item.css('display', 'none')
+				back.css('display', 'block')
+				submenu.addClass('active')
+				toggle = false
+			}
+
+			back.on("click", function (event) {
+				event.preventDefault()
+				submenu.removeClass('active')
+				header__nav_item.css('display', 'inline')
+				back.css('display', 'none')
+				submenu.addClass('true')
+				toggle = true
+			});
 		});
-	});
-
-
-
-
+	}
 }
 
 export function sticky() {
