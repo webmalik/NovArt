@@ -7,6 +7,12 @@
 }
 @font-face {
   font-family: "Gilroy";
+  src: url("../fonts/Gilroy-Medium.woff") format("woff"), url("../fonts/Gilroy-Medium.woff2") format("woff2");
+  font-weight: Medium;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gilroy";
   src: url("../fonts/Gilroy-Bold.woff") format("woff"), url("../fonts/Gilroy-Bold.woff2") format("woff2");
   font-weight: Bold;
   font-style: normal;
@@ -21,12 +27,6 @@
   font-family: "Gilroy";
   src: url("../fonts/Gilroy-Regular.woff") format("woff"), url("../fonts/Gilroy-Regular.woff2") format("woff2");
   font-weight: Regular;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Gilroy";
-  src: url("../fonts/Gilroy-Medium.woff") format("woff"), url("../fonts/Gilroy-Medium.woff2") format("woff2");
-  font-weight: Medium;
   font-style: normal;
 }
 @font-face {
@@ -2108,6 +2108,9 @@ main {
   .cart {
     padding: 2rem 0;
   }
+  .comments__item {
+    grid-template-columns: 2fr 5fr;
+  }
 }
 @media (max-width: 767px) {
   .container {
@@ -2127,6 +2130,9 @@ main {
   }
   .promo__list {
     grid-template-columns: 1fr;
+  }
+  .comments__item {
+    grid-template-columns: 3fr 5fr;
   }
 }
 @media (max-width: 576px) {

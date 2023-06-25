@@ -186,6 +186,10 @@
 	.cart {
 		padding: 2rem 0;
 	}
+
+	.comments__item {
+		grid-template-columns: 2fr 5fr;
+	}
 }
 
 @include media-width($sm) {
@@ -216,6 +220,9 @@
 		&__list {
 			grid-template-columns: 1fr;
 		}
+	}
+	.comments__item {
+		grid-template-columns: 3fr 5fr; 
 	}
 }
 
