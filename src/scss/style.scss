@@ -7,7 +7,12 @@
 @import "_components";
 @import "_burger-icon";
 
-
+.header__main {
+	position: absolute;
+	left: 0;
+	right: 0;
+	padding: 0 10rem;
+}
 .header {
 	transition: all 0.5s ease-in;
 

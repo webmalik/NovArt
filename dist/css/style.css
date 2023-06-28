@@ -16,13 +16,6 @@
 
 @font-face {
   font-family: "Gilroy";
-  src: url("../fonts/Gilroy-Regular.woff") format("woff"), url("../fonts/Gilroy-Regular.woff2") format("woff2");
-  font-weight: Regular;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Gilroy";
   src: url("../fonts/Gilroy-Medium.woff") format("woff"), url("../fonts/Gilroy-Medium.woff2") format("woff2");
   font-weight: Medium;
   font-style: normal;
@@ -30,15 +23,8 @@
 
 @font-face {
   font-family: "Gilroy";
-  src: url("../fonts/Gilroy-SemiBold.woff") format("woff"), url("../fonts/Gilroy-SemiBold.woff2") format("woff2");
-  font-weight: SemiBold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Gilroy";
-  src: url("../fonts/Gilroy-SemiBold.woff") format("woff"), url("../fonts/Gilroy-SemiBold.woff2") format("woff2");
-  font-weight: SemiBold;
+  src: url("../fonts/Gilroy-Bold.woff") format("woff"), url("../fonts/Gilroy-Bold.woff2") format("woff2");
+  font-weight: Bold;
   font-style: normal;
 }
 
@@ -51,8 +37,22 @@
 
 @font-face {
   font-family: "Gilroy";
-  src: url("../fonts/Gilroy-Bold.woff") format("woff"), url("../fonts/Gilroy-Bold.woff2") format("woff2");
-  font-weight: Bold;
+  src: url("../fonts/Gilroy-Regular.woff") format("woff"), url("../fonts/Gilroy-Regular.woff2") format("woff2");
+  font-weight: Regular;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-SemiBold.woff") format("woff"), url("../fonts/Gilroy-SemiBold.woff2") format("woff2");
+  font-weight: SemiBold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-SemiBold.woff") format("woff"), url("../fonts/Gilroy-SemiBold.woff2") format("woff2");
+  font-weight: SemiBold;
   font-style: normal;
 }
 
@@ -792,6 +792,13 @@ main {
   transform: rotate(-45deg);
   top: 39px;
   left: 8px;
+}
+
+.header__main {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 0 10rem;
 }
 
 .header {
@@ -2199,6 +2206,10 @@ main {
   .container {
     padding: 0 8rem;
   }
+
+  .header__main {
+    padding: 0 8rem;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -2209,10 +2220,18 @@ main {
   .container {
     padding: 0 6rem;
   }
+
+  .header__main {
+    padding: 0 6rem;
+  }
 }
 
 @media (max-width: 992px) {
   .container {
+    padding: 0 4rem;
+  }
+
+  .header__main {
     padding: 0 4rem;
   }
 
@@ -2372,6 +2391,10 @@ main {
     padding: 0 2rem;
   }
 
+  .header__main {
+    padding: 0 2rem;
+  }
+
   .header__title {
     font-size: 3rem;
   }
@@ -2402,6 +2425,10 @@ main {
   }
 
   .container {
+    padding: 0 1.2rem;
+  }
+
+  .header__main {
     padding: 0 1.2rem;
   }
 

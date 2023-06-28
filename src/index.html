@@ -7,30 +7,32 @@
 
 <body>
 	<div class="wrapper">
-		<div class="swiper">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide"><img src="@img/banner.png" alt=""></div>
-				<div class="swiper-slide"><img src="@img/banner.png" alt=""></div>
-				<div class="swiper-slide"><img src="@img/banner.png" alt=""></div>
-			</div>
-		</div>
 		<div class="container">
 			@@include("html/header-main.html", {})
-			<div class="header__info">
-				<div class="header__slug">
-					STILVOLL · HARMONISCH · HOCHWERTIG
-				</div>
-				<div class="header__title">
-					FERTIGE BILDERWÄNDE
-				</div>
-				<button class="header__button button">
-					Jetzt stöbern
-				</button>
-			</div>
-			<main>
-				@@include("html/main.html", {})
-			</main>
 		</div>
+		<main>
+			<div class="swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide"><img src="@img/banner.png" alt=""></div>
+					<div class="swiper-slide"><img src="@img/banner.png" alt=""></div>
+					<div class="swiper-slide"><img src="@img/banner.png" alt=""></div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="header__info">
+					<div class="header__slug">
+						STILVOLL · HARMONISCH · HOCHWERTIG
+					</div>
+					<div class="header__title">
+						FERTIGE BILDERWÄNDE
+					</div>
+					<button class="header__button button">
+						Jetzt stöbern
+					</button>
+				</div>
+				@@include("html/main.html", {})
+			</div>
+		</main>
 		@@include("html/footer.html", {})
 		@@include("html/scripts.html", {})
 	</div>

@@ -9,6 +9,10 @@
 	.container {
 		padding: 0 8rem;
 	}
+
+	.header__main {
+		padding: 0 8rem;
+	}
 }
 
 @include media-width($lg) {
@@ -19,6 +23,10 @@
 	.container {
 		padding: 0 6rem;
 	}
+
+	.header__main {
+		padding: 0 6rem;
+	}
 }
 
 @include media-width($md) {
@@ -27,6 +35,10 @@
 	// }
 
 	.container {
+		padding: 0 4rem;
+	}
+
+	.header__main {
 		padding: 0 4rem;
 	}
 
@@ -201,6 +213,10 @@
 		padding: 0 2rem;
 	}
 
+	.header__main {
+		padding: 0 2rem;
+	}
+
 	.header__title {
 		font-size: 3rem;
 	}
@@ -232,6 +248,10 @@
 	}
 
 	.container {
+		padding: 0 1.2rem;
+	}
+
+	.header__main {
 		padding: 0 1.2rem;
 	}
 
